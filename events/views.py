@@ -9,7 +9,6 @@ from .serializers import EventSerializer
 # Create your views here.
 
 class EventDetailView(APIView):
-
     # Delete an event
     def delete(self, _request, pk):
         try:
@@ -27,7 +26,7 @@ class EventDetailView(APIView):
             updated_event.save()
             return Response(updated_event.data, status=status.HTTP_202_ACCEPTED)
         else:
-            return Respinse(updated_event.errors, status=status.HTTP_422_UNPROCESSABLE_ENTITY)
+            return Response(updated_event.errors, status=status.HTTP_422_UNPROCESSABLE_ENTITY)
 
     def get(self, _request, pk):
         event = Event.objects.get(id=pk)
