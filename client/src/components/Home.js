@@ -1,5 +1,6 @@
 /* eslint-disable no-unused-vars */
 import React, { useState } from 'react'
+import { Link } from 'react-router-dom'
 
 const Home = () => {
 
@@ -34,14 +35,16 @@ const Home = () => {
         <div className="left-box">
 
         </div>
+
         <div className="right-box">
           <div className="container">
             <h4>Join Festivents</h4>
             <h3>More than just events</h3>
             <p>For the world’s best venues and festivals</p>
-            <button>Learn more</button>
+            <Link to="/register"><button className="button is-medium is-dark">Join now</button></Link>
           </div>
         </div>
+
       </div>
 
       <div className="box-section">
