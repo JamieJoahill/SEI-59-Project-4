@@ -3,7 +3,7 @@ import { BrowserRouter, Switch, Route } from 'react-router-dom'
 import NavBar from './components/NavBar'
 import Home from './components/Home'
 import ShowEvents from './components/ShowEvents'
-import Register from './components/Register'
+import Register from './components/Register.js'
 import Login from './components/Login'
 
 const App = () => {

@@ -70,3 +70,102 @@
     margin-top: 15px;
 }
 /* Navbar Search End */
+
+.hero-container {
+    height: 95vh;
+}
+
+.wrapper {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    border-radius: 5px;
+    background-attachment: scroll;
+    overflow: hidden;
+}
+
+.wrapper video {
+    min-width: 100%;
+    min-height: 80%;
+    position: relative;
+    z-index: 1;
+}
+
+.wrapper .overlay {
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    z-index: 2;
+    background-image: linear-gradient(309deg, rgba(214,163,251,0.6965161064425771) 32%, rgba(171,246,45,0.7049194677871149) 86%);
+}
+
+.hero {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    z-index: 10;
+    width: 80%;
+    height: 80%;
+    display: flex;
+    justify-content: center;
+}
+
+.hero h1 {
+    color: rgb(56, 54, 54);
+    font-size: 110px;
+}
+
+.hero h2 {
+    color:rgb(56, 54, 54);
+    font-size: 95px;
+    margin-top: -50px;
+}
+
+.hero h1,
+.hero h2 {
+    margin-left: 40px;
+}
+
+/* Home Page Box Section */
+.box-section {
+  display: flex;
+  height: 75vh;
+}
+
+.left-box {
+  height: 100%;
+  width: 100%;
+  background-color: #acf62d;
+}
+
+.right-box {
+  height: 100%;
+  width: 100%;
+  background-color: #FFF;
+}
+
+/* Register Form Start  */
+.register-container {
+    background-color: #acf62d;
+    height: 100vh;
+}
+
+.register-form-headline {
+    font-size: 30px;
+}
+/* Register Form End */
+
+/* See all of our events start */
+
+/* 404 Error start */
+
+
+h2.getting-events-error-header {
+    font-size: 120px;
+    color: #D6A3FB;
+}
+/* 404 Error end */
+
+/* See all of our events end */
