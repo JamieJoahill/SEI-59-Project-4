@@ -22,9 +22,9 @@
 
 .navbar-brand-text {
   color: rgb(56, 54, 54);
-  font-size: 90px;
+  font-size: 60px;
   text-transform: uppercase;
-  letter-spacing: -7px;
+  letter-spacing: -5px;
 }
 
 .purple-highlight-text {
@@ -114,7 +114,7 @@
   height: 80%;
   display: flex;
   justify-content: center;
-}
+}  
 
 .hero h2 {
   color: rgb(56, 54, 54);

@@ -1,12 +1,33 @@
 /* eslint-disable no-unused-vars */
 import React, { useState, useEffect } from 'react'
-import { Link, useLocation } from 'react-router-dom'
+import { Link, useLocation, useHistory } from 'react-router-dom'
+import { getPayLoad } from './Helpers/auth'
 
 const NavBar = () => {
 
   const [query, setQuery] = useState('')
   const [input, setInput] = useState('')
   const location = useLocation()
+  const history = useHistory()
+
+  useEffect(() => {
+
+  }, [location.pathname])
+
+  // Authenticated - Determines if the user has the right access to our site
+  const userIsAuth = () => {
+    const payload = getPayLoad()
+    if (!payload) return false
+    // console.log('Payload ->', payload.sub > 1)
+    return payload.sub >= 0
+  }
+
+  console.log('User is auth ->',userIsAuth())
+
+  const handleLogout = () => {
+    window.localStorage.removeItem('token')
+    history.push('/')
+  }
 
   const handleSubmit = (event) => {
     event.preventDefault()
@@ -14,7 +35,6 @@ const NavBar = () => {
     setInput(input)
     
     setInput('')
-
   }
 
   return (
@@ -30,6 +50,14 @@ const NavBar = () => {
             <Link className="title navbar-btn-link" to="/events">
               EVENTS
             </Link>
+            {userIsAuth() ?
+              <>
+                <Link to="/events/new" className="title navbar-btn-link">Add Event</Link>
+                <Link to="/venues/new" className="title navbar-btn-link">Add Venue</Link>
+              </>
+              :
+              ''
+            }
           </div>
         </div>
         <div className="search-form">
@@ -43,12 +71,18 @@ const NavBar = () => {
           </form>
         </div>
         <div className="navbar-end">
-          <div className="navbar-item navbar-btn">
-            <Link className="navbar-btn-link" to="/register">Register</Link>
-          </div>
-          <div className="navbar-item navbar-btn">
-            <Link className="navbar-btn-link" to="/login">Log in</Link>
-          </div>
+          {!userIsAuth() ?
+            <>
+              <div className="navbar-item navbar-btn">
+                <Link className="navbar-btn-link" to="/register">Register</Link>
+              </div>
+              <div className="navbar-item navbar-btn">
+                <Link className="navbar-btn-link" to="/login">Log in</Link>
+              </div>
+            </>
+            :
+            <Link className="navbar-btn-link" onClick={handleLogout}>Log out</Link>
+          }
         </div>
       </div>
     </nav>

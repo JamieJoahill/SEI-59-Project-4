@@ -5,6 +5,8 @@ import { useHistory } from 'react-router'
 
 const Login = () => {
 
+  const history = useHistory()
+
   const [formData, setFormData] = useState({
     email: '',
     password: '',
@@ -27,6 +29,7 @@ const Login = () => {
     try {
       const  { data } = await axios.post('http://localhost:8000/auth/login/', formData)
       setTokenToLocalStorage(data.token)
+      history.push('/events')
     } catch (err) {
       setError(true)
     }
