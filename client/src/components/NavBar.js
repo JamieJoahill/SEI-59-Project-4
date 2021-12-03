@@ -27,8 +27,8 @@ const NavBar = () => {
         </div>
         <div className="navbar-start">
           <div className="navbar-item">
-            <Link className="purple-highlight-text" to="/events">
-              See all of our events
+            <Link className="title navbar-btn-link" to="/events">
+              EVENTS
             </Link>
           </div>
         </div>

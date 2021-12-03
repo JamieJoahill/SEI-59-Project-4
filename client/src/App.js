@@ -5,6 +5,7 @@ import Home from './components/Home'
 import ShowEvents from './components/ShowEvents'
 import Register from './components/Register.js'
 import Login from './components/Login'
+import ShowEvent from './components/ShowEvent'
 
 const App = () => {
   return (
@@ -13,6 +14,7 @@ const App = () => {
       <Switch>
         <Route exact path="/" component={Home} />
         <Route exact path="/events" component={ShowEvents} />
+        <Route exact path="/events/:id/" component={ShowEvent} />
         <Route exact path="/register" component={Register} />
         <Route exact path="/login" component={Login} />
       </Switch>

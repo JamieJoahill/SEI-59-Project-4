@@ -32,6 +32,7 @@ const Register = () => {
     try {
       await axios.post('http://localhost:8000/auth/register/', formData)
       history.push('/login')
+      handleClick()
     } catch (err) {
       console.log('Err ->', err)
       setErrorData(err.response.data.errors)

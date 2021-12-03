@@ -21,20 +21,62 @@ const ShowEvents = () => {
     getData()
   }, [])
 
-  console.log('Events ->', events)
+  const convertDate = (date) => {
+    const newDate = new Date(date)
+    const dateArr = []
+    const newStringDate = []
+    dateArr.push(newDate.toString().slice(0, 10).split(' '))
+    newStringDate.push(dateArr[0][0])
+    newStringDate.push(dateArr[0][2])
+    newStringDate.push(dateArr[0][1])
+    return newStringDate.toString().split(',').join(' ')
+  }
+
+  // console.log('Events ->', events)
 
   return (
-    <section className="section">
+    <section className="section dark-overlay">
       <div className="container">
         {events.length ?
           <div className="columns is-multiline">
             {events.map((event) => {
               return (
                 <div key={event.id} className="column is-one-quarter-desktop is-one-third-tablet">
-                  <div className="card">
+
+                  <div className="custom-card">
+                    <Link to={`/events/${event.id}/`}>
+
+                      <div className="custom-card-image">
+                        <figure className="image image-is-1by1">
+                          <img src={event.photo} alt={event.title} />
+                        </figure>
+                      </div>
+
+                      <div className="custom-card-content">
+                        <div className="card-title">
+                          {event.title.length < 20 ?
+                            <h3 className="title is-3">{event.title}</h3>
+                            :
+                            <h4 className="title is-4">{event.title}</h4>
+                          }
+                        </div>
+                      </div>
+
+                    </Link>
+
+                    <p className="custom-date">{convertDate(event.date)}</p>
+
+                    <div className="venue-wrapper">
+                      <p className="venue-name">{event.venue.name}</p>
+                      <p className="venue-location">{event.location}</p>
+                    </div>
+                    
+                  </div>
+
+                  {/* <div className="card">
                     <div className="card-image">
                       <figure className="image image-is-1by1">
-                        <img src={event.photos} alt={event.title} />
+                        <img src={event.photo} alt={event.title} />
                       </figure>
                     </div>
                     <div className="card-header">
@@ -47,7 +89,9 @@ const ShowEvents = () => {
                       <hr />
                       <p>{event.details}</p>
                     </div>
-                  </div>
+                  </div> */}
+
+
                 </div>
               )
             })}
@@ -60,7 +104,11 @@ const ShowEvents = () => {
                 <h3>This page has probably gone to one of our events...</h3>
                 <p>Not to worry, You can head back over to our <Link to="/">homepage</Link></p>
               </div>
-              : 'Events Loading...'}
+              : 
+              <div className="Loading-spinner">
+                <p>Loading...</p>
+              </div>
+            }
           </h2>
         }
       </div>

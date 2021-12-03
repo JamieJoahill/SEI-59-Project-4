@@ -49,10 +49,14 @@ const Home = () => {
 
       <div className="box-section">
         <div className="right-box">
-
+          <div className="container">
+            <h3>Check out our events</h3>
+            <p>Thinking of putting on an event?</p>
+            <Link to="/events"><button className="button is-medium is-dark">View Events</button></Link>
+          </div>
         </div>
         <div className="left-box">
-
+          
         </div>
       </div>
       <div className="section">
