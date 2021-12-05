@@ -22,7 +22,7 @@ const NavBar = () => {
     return payload.sub >= 0
   }
 
-  console.log('User is auth ->',userIsAuth())
+  // console.log('User is auth ->',userIsAuth())
 
   const handleLogout = () => {
     window.localStorage.removeItem('token')
@@ -31,7 +31,7 @@ const NavBar = () => {
 
   const handleSubmit = (event) => {
     event.preventDefault()
-    console.log('Searched Query ->', input)
+    // console.log('Searched Query ->', input)
     setInput(input)
     
     setInput('')
@@ -46,22 +46,24 @@ const NavBar = () => {
           </span>
         </div>
         <div className="navbar-start">
+
           <div className="navbar-item">
-            <Link className="title navbar-btn-link" to="/events">
-              EVENTS
+            <Link className=" navbar-btn-link" to="/events">
+                EVENTS
             </Link>
             {userIsAuth() ?
               <>
-                <Link to="/events/new" className="title navbar-btn-link">Add Event</Link>
-                <Link to="/venues/new" className="title navbar-btn-link">Add Venue</Link>
+                <Link to="/events/new" className=" navbar-btn-link">Add Event</Link>
+                <Link to="/venues/new" className=" navbar-btn-link">Add Venue</Link>
               </>
               :
               ''
             }
+
           </div>
         </div>
-        <div className="search-form">
-          <form onSubmit={handleSubmit}>
+        <div className="search-form-container">
+          <form onSubmit={handleSubmit} className="search-form">
             <input 
               type="text" 
               placeholder="Search for an event or venue" 
@@ -81,7 +83,9 @@ const NavBar = () => {
               </div>
             </>
             :
-            <Link className="navbar-btn-link" onClick={handleLogout}>Log out</Link>
+            <div className="navbar-item navbar-btn">
+              <Link className="navbar-btn-link" onClick={handleLogout} to="/">Log out</Link>
+            </div>
           }
         </div>
       </div>

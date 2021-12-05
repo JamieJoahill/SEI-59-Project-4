@@ -11,7 +11,7 @@ export const getPayLoad = () => {
   // console.log('Split token', splitToken)
   if (splitToken.length < 3) return 
   const payLoadString = splitToken[1]
-  console.log('Payload !! -->', JSON.parse(atob(payLoadString)))
+  //   console.log('Payload !! -->', JSON.parse(atob(payLoadString)))
   // console.log('Payload -> ', payLoadString)
   return JSON.parse(atob(payLoadString))
 }

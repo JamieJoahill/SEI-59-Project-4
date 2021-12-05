@@ -10,6 +10,14 @@ const Home = () => {
     'https://res.cloudinary.com/dmpvulj3q/video/upload/v1638098102/sei_project_4/mixkit-stage-of-an-electronic-music-festival-4188_jvbhlt.mp4'
   ])
 
+  const [heroImage, setHeroImage] = useState([
+    'https://res.cloudinary.com/dmpvulj3q/image/upload/v1638735384/sei_project_4/work-with-partners-2_y7alfi.jpg'
+  ])
+
+  const [boxVideo, setBoxVideo] = useState([
+    'https://res.cloudinary.com/dmpvulj3q/video/upload/v1638740658/sei_project_4/Pexels_Videos_2022396_nupooi.mp4'
+  ])
+
   const randomVideo = () => {
     return Math.floor(Math.random() * video.length)
   }
@@ -33,7 +41,7 @@ const Home = () => {
 
       <div className="box-section">
         <div className="left-box">
-
+          <div className="box-section-image" style={{ background: `url(${heroImage[0]})` }}></div>
         </div>
 
         <div className="right-box">
@@ -56,7 +64,7 @@ const Home = () => {
           </div>
         </div>
         <div className="left-box">
-          
+          <video autoPlay muted loop poster className="box-video" src={boxVideo[0]}></video>
         </div>
       </div>
       <div className="section">

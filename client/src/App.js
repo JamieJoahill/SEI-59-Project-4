@@ -1,6 +1,7 @@
 import React from 'react'
 import { BrowserRouter, Switch, Route } from 'react-router-dom'
 import NavBar from './components/NavBar'
+import Footer from './components/Footer'
 import Home from './components/Home'
 import ShowEvents from './components/ShowEvents'
 import Register from './components/Register.js'
@@ -22,6 +23,7 @@ const App = () => {
         <Route exact path="/register" component={Register} />
         <Route exact path="/login" component={Login} />
       </Switch>
+      <Footer />
     </BrowserRouter>
   )
 }

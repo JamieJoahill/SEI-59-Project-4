@@ -67,8 +67,8 @@ const ShowEvents = () => {
                     <p className="custom-date">{convertDate(event.date)}</p>
 
                     <div className="venue-wrapper">
-                      <p className="venue-name">{event.venue.name}</p>
-                      <p className="venue-location">{event.location}</p>
+                      {/* <p className="venue-name">{event.venue.name}</p>
+                      <p className="venue-location">{event.location}</p> */}
                     </div>
                     
                   </div>
