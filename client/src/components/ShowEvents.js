@@ -12,7 +12,7 @@ const ShowEvents = () => {
     const getData = async () => {
       try {
         // const { data } = await axios.get('/events')
-        const { data } = await axios.get('api/events')
+        const { data } = await axios.get('/api/events')
         setEvents(data)
       } catch (err) {
         setHasError(true)
@@ -55,16 +55,16 @@ const ShowEvents = () => {
                       <div className="custom-card-content">
                         <div className="card-title">
                           {event.title.length < 20 ?
-                            <h3 className="title is-3">{event.title}</h3>
+                            <h3 className="title is-3 white-text">{event.title}</h3>
                             :
-                            <h4 className="title is-4">{event.title}</h4>
+                            <h4 className="title is-4 white-text">{event.title}</h4>
                           }
                         </div>
                       </div>
 
                     </Link>
 
-                    <p className="custom-date">{convertDate(event.date)}</p>
+                    <p className="custom-date">{convertDate(event.date)} {event.start_time}</p>
 
                     <div className="venue-wrapper">
                       {/* <p className="venue-name">{event.venue.name}</p>

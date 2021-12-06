@@ -34,7 +34,7 @@ const Register = () => {
       history.push('/login')
       handleClick()
     } catch (err) {
-      console.log('Err ->', err)
+      console.log('Err ->', err.response)
       setErrorData(err.response.data.errors)
     }
   }
@@ -54,9 +54,9 @@ const Register = () => {
       password_confirmation: '',
     })
   }
-
+  // console.log('Form Data ->', formData)
   return (
-    <div className="section register-container">
+    <div className="section register-container form-wrapper">
       
       <form className="section container" onSubmit={handleSubmit}>
         <h2 className="register-form-headline">Register to post your event / venue</h2>

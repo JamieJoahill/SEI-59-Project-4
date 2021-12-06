@@ -215,6 +215,10 @@
   font-size: 20px;
 }
 
+.button-spacing {
+  margin-top: 25px;
+}
+
 /* Show Events Start */
 
 /* Custom Card Start */
@@ -228,6 +232,10 @@
 }
 
 /* Customer Card End */
+
+.white-text {
+  color: #fff;
+}
 
 /* Show Events End */
 
@@ -340,9 +348,15 @@ div .custom-date-time p {
 
 /* Show Event End */
 
+/* Add Event Start */
+.form-wrapper {
+  background-color: rgb(129, 126, 126);
+}
+/* Add Event End */
+
 /* Register Form Start  */
 .register-container {
-  background-color: #acf62d;
+  background-color: rgb(129, 126, 126);
   height: 100vh;
 }
 

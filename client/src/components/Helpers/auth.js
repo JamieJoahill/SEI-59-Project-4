@@ -5,7 +5,7 @@ export const getTokenFromLocalStorage = () => {
 
 export const getPayLoad = () => {
   const token = getTokenFromLocalStorage()
-  // console.log('Token', token)
+  //   console.log('Token', token)
   if (!token) return
   const splitToken = token.split('.')
   // console.log('Split token', splitToken)

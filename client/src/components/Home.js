@@ -49,7 +49,7 @@ const Home = () => {
             <h4>Join Festivents</h4>
             <h3>More than just events</h3>
             <p>For the world’s best venues and festivals</p>
-            <Link to="/register"><button className="button is-medium is-dark">Join now</button></Link>
+            <Link to="/register"><button className="button is-medium is-dark button-spacing">Join now</button></Link>
           </div>
         </div>
 
@@ -60,7 +60,7 @@ const Home = () => {
           <div className="container">
             <h3>Check out our events</h3>
             <p>Thinking of putting on an event?</p>
-            <Link to="/events"><button className="button is-medium is-dark">View Events</button></Link>
+            <Link to="/events"><button className="button is-medium is-dark button-spacing">View Events</button></Link>
           </div>
         </div>
         <div className="left-box">

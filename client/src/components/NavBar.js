@@ -16,10 +16,16 @@ const NavBar = () => {
 
   // Authenticated - Determines if the user has the right access to our site
   const userIsAuth = () => {
+    // const payload = getPayLoad()
+    // if (!payload) return false
+    // // console.log('Payload ->', payload.sub > 1)
+    // return payload.sub >= 0
     const payload = getPayLoad()
+    // console.log(payload)
+    // console.log(!payload)
     if (!payload) return false
-    // console.log('Payload ->', payload.sub > 1)
-    return payload.sub >= 0
+    const now = Math.round(Date.now() / 1000)
+    return now < payload.exp
   }
 
   // console.log('User is auth ->',userIsAuth())
@@ -54,7 +60,7 @@ const NavBar = () => {
             {userIsAuth() ?
               <>
                 <Link to="/events/new" className=" navbar-btn-link">Add Event</Link>
-                <Link to="/venues/new" className=" navbar-btn-link">Add Venue</Link>
+                {/* <Link to="/venues/new" className=" navbar-btn-link">Add Venue</Link> */}
               </>
               :
               ''
