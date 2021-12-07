@@ -3,6 +3,7 @@
   padding: 0;
   box-sizing: border-box;
   font-family: "Poppins", sans-serif;
+  font-weight: 600;
 }
 
 /* Colors */
@@ -10,13 +11,75 @@
 /* Purple : #D6A3FB */
 /* Black: rgb(56, 54, 54) */
 
-/* Navbar Start */
+/* New Navbar Start */
 .navbar {
+  background-color:transparent;
+  position: fixed;
+  width: 100%;
+  height: 100px;
+  transition: all .2s ease;
+}
+
+.black {
+  background-color: #000;
+}
+
+.navbar-container {
+  height: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.navbar-search {
+  border: 1px solid red;
+}
+
+.search-form-container {
+  height: 100%;
+}
+
+.navbar-logo {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#square {
+  width: 40px;
+  height: 40px;
+  background: white;
+   transform: rotate(45deg);
+}
+
+.navbar-btn-link {
+  color: #FFF;
+}
+
+.login {
+  color: #000;
+}
+
+.navbar-buttons {
+  width: 20%;
+  display: flex;
+  justify-content: flex-end;
+}
+
+
+
+
+/* New Navbar End */
+
+/* Navbar Start */
+/* .navbar {
   background-color: #acf62d;
   background-color: rgb(129, 126, 126);
-  /* background-color: rgb(49, 48, 48); */
-  height: 80px;
-}
+  background-color:#000;
+  position: fixed;
+  width: 100%;
+  height: 100px;
+} */
 
 .navbar-brand {
   align-items: center;
@@ -44,25 +107,36 @@
   margin-bottom: 10px;
 }
 
-.navbar-btn-link {
-  /* border: 4px solid rgb(56, 54, 54); */
+/* .navbar-btn-link {
   color: rgb(56, 54, 54);
   transition: all 0.3s ease;
   padding-top: 3px;
   padding-bottom: 3px;
   padding-left: 6.5px;
   padding-right: 6.5px;
-  /* border-radius: 4px; */
   text-transform: uppercase;
   font-size: 24px;
   letter-spacing: -.5px;
+} */
+
+.login {
+  border: 1px solid yellow;
+  font-size: 15px;
+  background-color: yellow;
+  border-radius: 50px;
+  padding: 8px 15px 8px 15px;
+  transition: all .3s ease;
 }
 
-.navbar-btn-link:hover {
-  /* border: 4px solid #D6A3FB; */
+.login:hover {
+  background-color: rgb(255, 238, 0);
+  color: #000;
+}
+
+/* .navbar-btn-link:hover {
   color: #d6a3fb;
   color: rgb(156, 153, 153);
-}
+} */
 
 /* Navbar Search Start */
 .navbar-search {
@@ -98,7 +172,7 @@
 /* Footer End */
 
 .hero-container {
-  height: 85vh;
+  height: 100vh;
 }
 
 .wrapper {
@@ -144,7 +218,16 @@
   height: 80%;
   display: flex;
   justify-content: center;
-}  
+}
+
+.hero-container-text {
+  width: 100%;
+  height: 100%;
+  border: 2px solid red;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
 
 .hero h2 {
   color: rgb(56, 54, 54);
@@ -155,7 +238,7 @@
 .hero h3 {
   color: rgb(56, 54, 54);
   color: rgb(156, 153, 153);
-  font-size: 90px;
+  font-size: 30px;
   margin-top: -50px;
 }
 
@@ -221,6 +304,10 @@
 
 /* Show Events Start */
 
+.show-event-count {
+    margin-bottom: 15px;
+}
+
 /* Custom Card Start */
 .venue-wrapper {
   margin-top: 15px;
@@ -237,9 +324,33 @@
   color: #fff;
 }
 
+.venue-name {
+  color: rgb(255, 238, 0);
+}
+
 /* Show Events End */
 
 /* Show Event Start */
+
+.container-main {
+  max-width: 50%;
+  width: 50%;
+  float: left;
+  height: 75vh;
+  overflow-x: scroll;
+  overflow-y: scroll; 
+  overflow: scroll;
+}
+
+.edit-delete-button {
+  display: flex;
+  justify-content: space-evenly;
+  margin-top: 30px;
+}
+
+.container-main::-webkit-scrollbar {
+  display: none;
+}
 
 .background_color {
   padding-top: 40px;
@@ -341,10 +452,23 @@ div .custom-date-time p {
 }
 
 .category-location {
-  width: 140px;
+  width: 280px;
   display: flex;
   justify-content: space-between;
 }
+
+.line {
+    height: 1px;
+    width: 100%;
+    background-color:rgba(109, 109, 109, 0.603);
+    margin-bottom: 40px;
+}
+
+/* .poppins {
+    font-family: 'Poppins' !important;
+    font-weight: 400;
+    font-size: 16px !important;
+} */
 
 /* Show Event End */
 
@@ -376,3 +500,27 @@ h2.getting-events-error-header {
 /* 404 Error end */
 
 /* See all of our events end */
+
+/* Search Page Start */
+.search-element-container {
+  display: flex;
+  width: 1375px;
+}
+
+.text-container {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.search-placeholder::placeholder {
+  color: #000;
+}
+
+.event-description {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Search Page End */

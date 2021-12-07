@@ -37,6 +37,9 @@ const ShowEvents = () => {
   return (
     <section className="section dark-overlay">
       <div className="container">
+        <div className="show-event-count">
+          <div>{events.length} available events</div>
+        </div>
         {events.length ?
           <div className="columns is-multiline">
             {events.map((event) => {
@@ -67,8 +70,8 @@ const ShowEvents = () => {
                     <p className="custom-date">{convertDate(event.date)} {event.start_time}</p>
 
                     <div className="venue-wrapper">
-                      {/* <p className="venue-name">{event.venue.name}</p>
-                      <p className="venue-location">{event.location}</p> */}
+                      <p className="venue-name">{event.venue.name}</p>
+                      <p className="venue-location">{event.location}</p>
                     </div>
                     
                   </div>

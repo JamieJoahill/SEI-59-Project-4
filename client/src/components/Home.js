@@ -1,6 +1,7 @@
 /* eslint-disable no-unused-vars */
 import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
+import { getPayLoad } from './Helpers/auth'
 
 const Home = () => {
 
@@ -22,6 +23,21 @@ const Home = () => {
     return Math.floor(Math.random() * video.length)
   }
 
+  const userIsAuth = () => {
+    // const payload = getPayLoad()
+    // if (!payload) return false
+    // // console.log('Payload ->', payload.sub > 1)
+    // return payload.sub >= 0
+    const payload = getPayLoad()
+    // console.log(payload)
+    // console.log(!payload)
+    if (!payload) return false
+    const now = Math.round(Date.now() / 1000)
+    return now < payload.exp
+  }
+
+  // console.log('User is auth ->',userIsAuth())
+
   return (
     <>
       <div className="hero-container">
@@ -33,10 +49,22 @@ const Home = () => {
           </div>
         </div>
 
-        <section className="hero container">
+        {/* <section className="hero container">
           <h2>Explore our events</h2>
           <h3>Create your event</h3>
+        </section> */}
+
+        {/* <section className="hero container hero-text">
+          <h3>Discover events and livestreams</h3>
+          <h3>from around the world</h3>
+        </section> */}
+
+        <section className="hero-container-text">
+          <h3>Discover events and livestreams</h3>
+          <h3>from around the world</h3>
         </section>
+
+
       </div>
 
       <div className="box-section">
@@ -45,12 +73,21 @@ const Home = () => {
         </div>
 
         <div className="right-box">
-          <div className="container">
-            <h4>Join Festivents</h4>
-            <h3>More than just events</h3>
-            <p>For the world’s best venues and festivals</p>
-            <Link to="/register"><button className="button is-medium is-dark button-spacing">Join now</button></Link>
-          </div>
+          {!userIsAuth() ? 
+            <div className="container">
+              <h4>Join Festivents</h4>
+              <h3>More than just events</h3>
+              <p>For the world’s best venues and events</p>
+              <Link to="/register"><button className="button is-medium is-dark button-spacing">Join now</button></Link>
+            </div>
+            :
+            <div className="container">
+              <h4>Create an event</h4>
+              <h3>More than just events</h3>
+              <p>For the world’s best venues and events</p>
+              <Link to="/events/new"><button className="button is-medium is-dark button-spacing">Create an event</button></Link>
+            </div>
+          }
         </div>
 
       </div>

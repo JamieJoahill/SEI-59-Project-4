@@ -59,9 +59,9 @@ const Register = () => {
     <div className="section register-container form-wrapper">
       
       <form className="section container" onSubmit={handleSubmit}>
-        <h2 className="register-form-headline">Register to post your event / venue</h2>
+        <h2 className="register-form-headline container  column is-two-fifths">Register to post your event</h2>
         <hr />
-        <div className="field">
+        <div className="field is-two-fifths container column">
           <label className="label">Username</label>
           <div className="control">
             <input 
@@ -75,7 +75,7 @@ const Register = () => {
           </div>
         </div>
 
-        <div className="field">
+        <div className="field is-two-fifths container column">
           <label className="label">Email</label>
           <div className="control">
             <input 
@@ -89,7 +89,7 @@ const Register = () => {
           </div>
         </div>
 
-        <div className="field">
+        <div className="field is-two-fifths container column">
           <label className="label">Password</label>
           <div className="control">
             <input 
@@ -103,7 +103,7 @@ const Register = () => {
           </div>
         </div>
 
-        <div className="field">
+        <div className="field is-two-fifths container column">
           <label className="label">Password Confirmation</label>
           <div className="control">
             <input 
@@ -117,7 +117,7 @@ const Register = () => {
           </div>
         </div>
 
-        <div className="field is-grouped is-grouped-right">
+        <div className="field is-grouped is-grouped-right container column is-two-fifths">
           <p className="control">
             <button className="button">
               Submit

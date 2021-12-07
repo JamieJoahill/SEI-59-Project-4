@@ -12,18 +12,21 @@ export const ImageUploadField = ({ handleImageUrl }) => {
     data.append('file', event.target.files[0])
     data.append('upload_preset', uploadPreset)
     // console.log('Data ->', data)
+    // console.log('Data file', data.file)
     const response = await axios.post(uploadUrl, data)
     handleImageUrl(response.data.url)
     console.log('Response ->', response)
   }
 
   return (
-    <>
+    <div className="field is-two-fifths container">
       <label>Upload Image</label>
-      <input
-        type="file"
-        onChange={handleUpload}
-      />
-    </>
+      <div className="control">
+        <input
+          type="file"
+          onChange={handleUpload}
+        />
+      </div>
+    </div>
   )
 }

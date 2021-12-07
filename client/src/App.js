@@ -9,6 +9,7 @@ import Login from './components/Login'
 import ShowEvent from './components/ShowEvent'
 import AddEvent from './components/AddEvent'
 import AddVenue from './components/AddVenue'
+import Search from './components/Search'
 
 const App = () => {
   return (
@@ -16,6 +17,7 @@ const App = () => {
       <NavBar />
       <Switch>
         <Route exact path="/" component={Home} />
+        <Route exact path="/search" component={Search} />
         <Route exact path="/events" component={ShowEvents} />
         <Route exact path="/events/new" component={AddEvent} />
         <Route exact path="/events/:id/" component={ShowEvent} />

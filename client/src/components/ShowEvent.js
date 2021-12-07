@@ -24,6 +24,19 @@ const ShowEvent = () => {
     getData()
   }, [id])
 
+  // Get Username from Localstorage 
+  // const getMessage = localStorage.getItem('message')
+  // const getUsername = getMessage.split(' ').splice(2, 3)
+
+  // console.log(getUsername[0])
+
+  // console.log('Event', event)
+
+  // const LoggedInUserIDString = atob(localStorage.getItem('token').split('.')[1])
+  // const LoggedInUserID = JSON.parse(LoggedInUserIDString)
+
+  //   console.log('Logged In User - >', LoggedInUserID.sub)
+  //   console.log('event owner', event)
 
   return (
     <>
@@ -33,11 +46,20 @@ const ShowEvent = () => {
           <div className="container is-widescreen custom-show-event-container">
             <div className="columns">
               <div className="column is-two-fifths red-column">
-                <figure className="image image-is-1by1">
-                  <img src={event.photo} alt={event.title} className="show-event-custom-image"/>
-                </figure>
+                <div className="image-wrapper">
+                  <figure className="image image-is-1by1">
+                    <img src={event.photo} alt={event.title} className="show-event-custom-image"/>
+                  </figure>
+                  {/* Logic here to show button is user created that event */}
+                  {/* {LoggedInUserID.sub === event.owner &&
+                  <div className="edit-delete-button">
+                    <button className="button is-success is-outlined">Edit event</button>
+                    <button className="button is-danger is-outlined">Delete event</button>
+                  </div>  
+                  } */}
+                </div>
               </div>
-              <div className="column blue-column">
+              <div className="column blue-column container-main">
                 <h1 className="title">{event.title}</h1>
                 <h5 className="title is-5">{event.venue.name}</h5>
                 <div className="custom-date-time">
@@ -54,16 +76,24 @@ const ShowEvent = () => {
                   <p>Presented By {event.venue.name}</p>
                 </div>
                 <div className="venue">
-                  <h4 className="title is-4">Venue</h4>
-                  <p>{event.venue.name}</p>
-                  <p>{event.venue.address}</p>
+                  <div className="line"></div>
+                  <h4 className="title is-4 poppins">Venue</h4>
+                  <h3 className="title is-3">{event.venue.name}</h3>
+                  <p>
+                    {event.venue.address}
+                    <a href={`https://www.google.com/maps/place/${event.venue.address}`} target="_blank" rel="noreferrer">
+                      <i className="far fa-window-restore"></i>
+                    </a>
+                  </p>
                   <p>{event.venue.capacity} capacity</p>
                 </div>
 
                 <div className="venue">
-                  <h4 className="title is-4">Event added by:</h4>
+                  <div className="line"></div>
+                  <h4 className="title is-4">Event posted by: {event.owner.email}</h4>
                 </div>
               </div>
+
             </div>
           </div>
         </div>

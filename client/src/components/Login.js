@@ -23,20 +23,23 @@ const Login = () => {
     window.localStorage.setItem('token', token)
   }
 
+  const setUsernameToLocalStorage = (message) => {
+    window.localStorage.setItem('message', message)
+  }
+
   const handleSubmit = async (event) => {
     event.preventDefault()
     console.log('Form Data ->', formData)
     try {
       const  { data } = await axios.post('http://localhost:8000/auth/login/', formData)
       setTokenToLocalStorage(data.token)
+      setUsernameToLocalStorage(data.message)
       history.push('/events')
       handleClick()
     } catch (err) {
       setError(true)
     }
   }
-
-
 
   const handleClick = () => {
     setFormData({
@@ -54,7 +57,7 @@ const Login = () => {
         <h3>Welcome to Festivents - A community where you can share your event or attend others events</h3>
         <hr />
 
-        <div className="field">
+        <div className="field is-two-fifths container column">
           <label className="label">Email</label>
           <div className="control">
             <input 
@@ -68,7 +71,7 @@ const Login = () => {
           </div>
         </div>
 
-        <div className="field">
+        <div className="field is-two-fifths container column">
           <label className="label">Password</label>
           <div className="control">
             <input 
@@ -82,7 +85,7 @@ const Login = () => {
           </div>
         </div>
 
-        <div className="field is-grouped is-grouped-right">
+        <div className="field is-grouped is-grouped-right container column is-two-fifths">
           <p className="control">
             <button className="button">
               Submit
