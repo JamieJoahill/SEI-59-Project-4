@@ -29,7 +29,6 @@ const Login = () => {
 
   const handleSubmit = async (event) => {
     event.preventDefault()
-    console.log('Form Data ->', formData)
     try {
       const  { data } = await axios.post('http://localhost:8000/auth/login/', formData)
       setTokenToLocalStorage(data.token)
@@ -50,52 +49,49 @@ const Login = () => {
 
 
   return (
-    <div className="section register-container">
-      
-      <form className="section container" onSubmit={handleSubmit}>
-        <h2 className="register-form-headline">Log in to post your event</h2>
-        <h3>Welcome to Festivents - A community where you can share your event or attend others events</h3>
-        <hr />
-
-        <div className="field is-two-fifths container column">
-          <label className="label">Email</label>
-          <div className="control">
-            <input 
-              className="input" 
-              type="email" 
-              placeholder="e.g. alexsmith@festievent.com"
-              name="email"
+    <div className='section register-container'>
+      <div className='register-head-lines section'>
+        <h3 className='title has-text-white'>Log in</h3>
+        <p className='has-text-light'>
+          Create the best nights out in your city.
+        </p>
+      </div>
+      <form className='section container' onSubmit={handleSubmit}>
+        <div className='field is-two-fifths container column justify-input'>
+          <div className='field is-two-fifths'>
+            <input
+              className='form-input'
+              type='email'
+              placeholder='Email'
+              name='email'
               value={formData.email}
               onChange={handleChange}
+              autoComplete='off'
             />
           </div>
         </div>
 
-        <div className="field is-two-fifths container column">
-          <label className="label">Password</label>
-          <div className="control">
-            <input 
-              className="input" 
-              type="password" 
-              placeholder="e.g. Password123" 
-              name="password"
+        <div className='field is-two-fifths container column justify-input'>
+          <div className='field is-two-fifths'>
+            <input
+              className='form-input'
+              type='password'
+              placeholder='Password'
+              name='password'
               value={formData.password}
               onChange={handleChange}
+              autoComplete='off'
             />
           </div>
         </div>
 
-        <div className="field is-grouped is-grouped-right container column is-two-fifths">
-          <p className="control">
-            <button className="button">
-              Submit
-            </button>
-          </p>
-          <p className="control">
-            <button className="button" onClick={handleClick}>
-              Cancel
-            </button>
-          </p>
+        <div className="field container column justify-input seperate-buttons">
+          <div className="control">
+            <button className="button is-rounded form-button">SUBMIT</button>
+          </div>
+          <div className="control">
+            <button className='button is-rounded form-button' onClick={handleClick}>CANCEL</button>
+          </div>
         </div>
 
       </form>

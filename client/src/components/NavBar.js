@@ -65,18 +65,25 @@ const NavBar = () => {
     }
   }
 
+  // <i className="fas fa-search"></i>
+
   return (
     <nav className='navbar'>
       <div className='navbar-container container'>
         <div className='navbar-search'>
           <div className='search-form-container'>
             <form onSubmit={handleSearchSubmit} className='search-form'>
-              <input
-                type='text'
-                placeholder='Search for an event or venue'
-                className='navbar-search'
-                onChange={(e) => setInput(e)}
-              />
+              <p className="control has-icons-left">
+                <input
+                  type='text'
+                  placeholder='Search for an event or venue'
+                  className='navbar-search input'
+                  onChange={(e) => setInput(e)}
+                />
+                <span className="icon is-small is-left">
+                  <i className="fas fa-search"></i>
+                </span>
+              </p>
             </form>
           </div>
         </div>
@@ -95,16 +102,22 @@ const NavBar = () => {
               </div>
               <div className='navbar-item navbar-btn'>
                 <Link className='navbar-btn-link login' to='/login'>
-                  Log in
+                 LOG IN
                 </Link>
               </div>
             </>
           ) : (
-            <div className='navbar-item navbar-btn'>
-              <Link className='navbar-btn-link' onClick={handleLogout} to='/'>
-                Log out ({getUsername[0]})
+            <>
+              <Link to='/events/new' className='navbar-btn-link create-event-btn'>
+                  Create an event
               </Link>
-            </div>
+              <div className='navbar-item navbar-btn'>
+                <Link className='navbar-btn-link login' onClick={handleLogout} to='/'>
+                  {/* Log out ({getUsername[0]}) */}
+                  Log out
+                </Link>
+              </div>
+            </>
           )}
         </div>
       </div>

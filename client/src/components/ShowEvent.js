@@ -15,7 +15,7 @@ const ShowEvent = () => {
     const getData = async () => {
       try {
         const { data } = await axios.get(`http://localhost:8000/api/events/${id}/`)
-        console.log('Data ->', data)
+        // console.log('Data ->', data)
         setEvent(data)
       } catch (err) {
         setHasError(true)
@@ -37,6 +37,8 @@ const ShowEvent = () => {
 
   //   console.log('Logged In User - >', LoggedInUserID.sub)
   //   console.log('event owner', event)
+
+  console.log('Event', event)
 
   return (
     <>
@@ -76,16 +78,31 @@ const ShowEvent = () => {
                   <p>Presented By {event.venue.name}</p>
                 </div>
                 <div className="venue">
-                  <div className="line"></div>
-                  <h4 className="title is-4 poppins">Venue</h4>
-                  <h3 className="title is-3">{event.venue.name}</h3>
-                  <p>
-                    {event.venue.address}
-                    <a href={`https://www.google.com/maps/place/${event.venue.address}`} target="_blank" rel="noreferrer">
-                      <i className="far fa-window-restore"></i>
-                    </a>
-                  </p>
-                  <p>{event.venue.capacity} capacity</p>
+                  <div className="venue-info">
+                    <div className="line"></div>
+                    <h4 className="title is-4 poppins">Venue</h4>
+                    <Link to={`/venues/${event.venue.id}/`}>
+                      <h3 className="title is-3">{event.venue.name}</h3>
+                    </Link>
+                    <p>
+                      {event.venue.address}
+                      <a href={`https://www.google.com/maps/place/${event.venue.address}`} target="_blank" rel="noreferrer">
+                        <i className="far fa-window-restore"></i>
+                      </a>
+                      <button className='button is-rounded has-text-white is-dark open-in-maps-btn'>
+                        <a href={`https://www.google.com/maps/place/${event.venue.address}`} target="_blank" rel="noreferrer" className="remove-link-styling">
+                          <i className="fas fa-map-marker-alt"></i>OPEN IN MAPS
+                        </a>
+                      </button>
+                    </p>
+                    <p>{event.venue.capacity} capacity</p>
+                  </div>
+                  <div className="venue-image">
+                    <figure className="image is-128x128">
+                      <img src={event.venue.venue_image} alt={event.title} className="show-event-custom-image"/>
+                    </figure>
+                  </div>
+
                 </div>
 
                 <div className="venue">

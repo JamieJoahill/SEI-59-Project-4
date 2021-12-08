@@ -4,7 +4,6 @@ import axios from 'axios'
 import { useHistory } from 'react-router'
 
 const Register = () => {
-
   const history = useHistory()
 
   const [formData, setFormData] = useState({
@@ -56,78 +55,77 @@ const Register = () => {
   }
   // console.log('Form Data ->', formData)
   return (
-    <div className="section register-container form-wrapper">
-      
-      <form className="section container" onSubmit={handleSubmit}>
-        <h2 className="register-form-headline container  column is-two-fifths">Register to post your event</h2>
-        <hr />
-        <div className="field is-two-fifths container column">
-          <label className="label">Username</label>
-          <div className="control">
-            <input 
-              className="input"
-              type="text" 
-              placeholder="e.g Alex Smith"
-              name="username"
+    <div className='section register-container'>
+      <div className='register-head-lines section'>
+        <h3 className='title has-text-white'>Register</h3>
+        <p className='has-text-light'>
+          Discover the best nights out in your city.
+        </p>
+      </div>
+      <form className='section container' onSubmit={handleSubmit}>
+        <div className='field is-two-fifths container column justify-input'>
+          <div className='field is-two-fifths'>
+            <input
+              className='form-input'
+              type='text'
+              placeholder='Username'
+              name='username'
               value={formData.username}
-              onChange={handleChange} 
+              onChange={handleChange}
+              autoComplete='off'
             />
           </div>
         </div>
 
-        <div className="field is-two-fifths container column">
-          <label className="label">Email</label>
-          <div className="control">
-            <input 
-              className="input" 
-              type="email" 
-              placeholder="e.g. alexsmith@gmail.com"
-              name="email"
+        <div className='field is-two-fifths container column justify-input'>
+          <div className='field is-two-fifths'>
+            <input
+              className='form-input'
+              type='text'
+              placeholder='Email'
+              name='email'
               value={formData.email}
               onChange={handleChange}
+              autoComplete='off'
             />
           </div>
         </div>
 
-        <div className="field is-two-fifths container column">
-          <label className="label">Password</label>
-          <div className="control">
-            <input 
-              className="input" 
-              type="password" 
-              placeholder="e.g. Password123"
-              name="password"
+        <div className='field is-two-fifths container column justify-input'>
+          <div className='field is-two-fifths'>
+            <input
+              className='form-input'
+              type='password'
+              placeholder='Password'
+              name='password'
               value={formData.password}
               onChange={handleChange}
+              autoComplete='off'
             />
           </div>
         </div>
 
-        <div className="field is-two-fifths container column">
-          <label className="label">Password Confirmation</label>
-          <div className="control">
-            <input 
-              className="input" 
-              type="password" 
-              placeholder="Password Confirmation" 
-              name="password_confirmation"
+        <div className='field is-two-fifths container column justify-input'>
+          <div className='field is-two-fifths'>
+            <input
+              className='form-input'
+              type='password'
+              placeholder='Password Confirmation'
+              name='password_confirmation'
               value={formData.password_confirmation}
               onChange={handleChange}
+              autoComplete='off'
             />
           </div>
         </div>
 
-        <div className="field is-grouped is-grouped-right container column is-two-fifths">
-          <p className="control">
-            <button className="button">
-              Submit
-            </button>
-          </p>
-          <p className="control">
-            <button className="button" onClick={handleClick}>
-              Cancel
-            </button>
-          </p>
+        <div className="field container column justify-input seperate-buttons">
+          <div className="control">
+            <button className="button is-rounded form-button">SUBMIT</button>
+          </div>
+          <div className="control">
+            <button className='button is-rounded form-button' onClick={handleClick}>CANCEL</button>
+          </div>
         </div>
 
       </form>
