@@ -6,7 +6,7 @@ from django.core.exceptions import ValidationError
 User = get_user_model()
 
 class UserSerializer(serializers.ModelSerializer):
-
+    username = serializers.CharField(write_only=True)
     password = serializers.CharField(write_only=True) # we dont accidently read the db, never taking passwords out
     password_confirmation = serializers.CharField(write_only=True)
 

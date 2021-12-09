@@ -1,0 +1,51 @@
+[
+{
+  "model": "categories.category",
+  "pk": 1,
+  "fields": {
+    "category": "DJ"
+  }
+},
+{
+  "model": "categories.category",
+  "pk": 2,
+  "fields": {
+    "category": "Open mic"
+  }
+},
+{
+  "model": "categories.category",
+  "pk": 3,
+  "fields": {
+    "category": "Festival"
+  }
+},
+{
+  "model": "categories.category",
+  "pk": 4,
+  "fields": {
+    "category": "Bar"
+  }
+},
+{
+  "model": "categories.category",
+  "pk": 14,
+  "fields": {
+    "category": "Pub"
+  }
+},
+{
+    "model": "categories.category",
+    "pk": 15,
+    "fields": {
+      "category": "Gigs"
+    }
+  },
+  {
+    "model": "categories.category",
+    "pk": 16,
+    "fields": {
+      "category": "Comedy"
+    }
+  }
+]

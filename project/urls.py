@@ -20,5 +20,7 @@ from django.urls.conf import include
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('api/events/', include('events.urls')),
+    path('api/venues/', include('venues.urls')),
+    path('api/categories/', include('categories.urls')),
     path('auth/', include('jwt_auth.urls'))
 ]

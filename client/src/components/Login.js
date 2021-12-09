@@ -33,7 +33,7 @@ const Login = () => {
       const  { data } = await axios.post('http://localhost:8000/auth/login/', formData)
       setTokenToLocalStorage(data.token)
       setUsernameToLocalStorage(data.message)
-      history.push('/events')
+      history.push('/')
       handleClick()
     } catch (err) {
       setError(true)

@@ -1,0 +1,46 @@
+[
+{
+  "model": "venues.venue",
+  "pk": 1,
+  "fields": {
+    "name": "STRONGROOM BAR",
+    "address": "120-124 Curtain Rd, Shoreditch, London EC2A 3SQ, UK",
+    "venue_image": "https://dice-media.imgix.net/attachments/2021-11-09/ea684ffd-e42d-490d-b132-6b71e6840436.jpg?rect=0%2C411%2C4032%2C2202&auto=format%2Ccompress&q=80&w=1280&dpr=1",
+    "capacity": 300,
+    "about": "Strongroom is an eclectic, independently-owned bar and late night venue that also happens to be home to one of London’s award winning studios. Run by a close-knit team and surrounded by an inspiring mix of artists and creative businesses that help build Strongroom's event listings."
+  }
+},
+{
+    "model": "venues.venue",
+    "pk": 2,
+    "fields": {
+      "name": "THE PIANO BAR SOHO",
+      "address": "16 Carlisle St, London W1D 3BT, UK",
+      "venue_image": "https://res.cloudinary.com/dmpvulj3q/image/upload/v1639047429/sei_project_4/77de4e60-3360-4b2d-9209-54e2b4424d26_jwd7qa.jpg",
+      "capacity": 300,
+      "about": "The Piano Bar Soho is a private cocktail lounge with spectacular live music, based in a townhouse, just off London's vibrant Soho Square."
+    }
+  },
+  {
+    "model": "venues.venue",
+    "pk": 3,
+    "fields": {
+      "name": "BUSH HALL",
+      "address": "310 Uxbridge Rd, London W12 7LJ",
+      "venue_image": "https://res.cloudinary.com/dmpvulj3q/image/upload/v1639047429/sei_project_4/77de4e60-3360-4b2d-9209-54e2b4424d26_jwd7qa.jpg",
+      "capacity": 300,
+      "about": "Bush Hall is a home for emerging talent and intimate showcases for global acts alike, download specs below and please email for gig rates. Past acts include Amy Winehouse, Adele, Michael Kiwanuka, Nick Cave and the Bad Seeds, REM, Alicia Keys and Bombay Bicycle Club."
+    }
+  },
+  {
+    "model": "venues.venue",
+    "pk": 4,
+    "fields": {
+      "name": "WINDMILL BRIXTON",
+      "address": "22 Blenheim Gardens, London SW2 5BZ",
+      "venue_image": "https://res.cloudinary.com/dmpvulj3q/image/upload/v1639050680/sei_project_4/cea8e845-75f5-4850-8ab9-7a3ddcc356e0_rhpy3b.jpg",
+      "capacity": 150,
+      "about": "Leftfield and underground acts play every night at this backstreet pub and informal music venue.."
+    }
+  }
+]

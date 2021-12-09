@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { Fragment } from 'react'
 import { BrowserRouter, Switch, Route } from 'react-router-dom'
 import NavBar from './components/NavBar'
 import Footer from './components/Footer'
@@ -11,22 +11,28 @@ import AddEvent from './components/AddEvent'
 import AddVenue from './components/AddVenue'
 import Search from './components/Search'
 import ShowVenue from './components/ShowVenue'
+import ScrollToTop from './components/ScrollToTop'
+import UpdateEvent from './components/UpdateEvent'
 
 const App = () => {
   return (
     <BrowserRouter>
       <NavBar />
-      <Switch>
-        <Route exact path="/" component={Home} />
-        <Route exact path="/search" component={Search} />
-        <Route exact path="/events" component={ShowEvents} />
-        <Route exact path="/events/new" component={AddEvent} />
-        <Route exact path="/events/:id/" component={ShowEvent} />
-        <Route exact path="/venues/new" component={AddVenue} />
-        <Route exact path="/venues/:id/" component={ShowVenue} />
-        <Route exact path="/register" component={Register} />
-        <Route exact path="/login" component={Login} />
-      </Switch>
+      <Fragment>
+        <ScrollToTop />
+        <Switch>
+          <Route exact path="/" component={Home} />
+          <Route exact path="/search" component={Search} />
+          <Route exact path="/events" component={ShowEvents} />
+          <Route exact path="/events/new" component={AddEvent} />
+          <Route exact path="/events/:id/" component={ShowEvent} />
+          <Route exact path="/events/:id/update" component={UpdateEvent} />
+          <Route exact path="/venues/new" component={AddVenue} />
+          <Route exact path="/venues/:id/" component={ShowVenue} />
+          <Route exact path="/register" component={Register} />
+          <Route exact path="/login" component={Login} />
+        </Switch>
+      </Fragment>
       <Footer />
     </BrowserRouter>
   )

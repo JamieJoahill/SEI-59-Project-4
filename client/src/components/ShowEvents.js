@@ -36,7 +36,7 @@ const ShowEvents = () => {
 
   return (
     <section className="section dark-overlay">
-      <div className="container">
+      <div className="container events-margin">
         <div className="show-event-count">
           <div>{events.length} available events</div>
         </div>
@@ -55,7 +55,7 @@ const ShowEvents = () => {
                         </figure>
                       </div>
 
-                      <div className="custom-card-content">
+                      <div className="custom-card-content mt-2">
                         <div className="card-title">
                           {event.title.length < 20 ?
                             <h3 className="title is-3 white-text">{event.title}</h3>

@@ -177,7 +177,7 @@
 /* Footer End */
 
 .hero-container {
-  height: 100vh;
+  height: 110vh !important;
 }
 
 .wrapper {
@@ -328,6 +328,10 @@
   color: rgb(255, 238, 0);
 }
 
+.events-margin {
+  margin-top: 50px;
+}
+
 /* Show Events End */
 
 /* Show Event Start */
@@ -447,6 +451,19 @@ div .custom-date-time p {
 
 .venue {
   margin-top: 40px;
+}
+
+.split-venue {
+  /* border: 1px solid red !important; */
+  display: flex !important;
+  justify-content: space-between !important;
+}
+
+.event-image-container {
+  display: flex;
+  justify-content: flex-end;
+  width: 225px;
+  margin-top: 20px
 }
 
 .venue h4 {
@@ -581,8 +598,43 @@ div .custom-date-time p {
 
 /* Add Event Start */
 .form-wrapper {
-  background-color: rgb(129, 126, 126);
+  background-color: #000;
+  display: flex;
+  justify-content: center;
 }
+
+.description-input {
+  min-height: 110px;
+}
+
+.flex-model {
+  display: flex;
+}
+
+.flex-model .fa-plus {
+  margin-left: 7px;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  transition: all .3s ease;
+}
+
+.flex-model .fa-plus:hover {
+  color: green;
+}
+
+.select select {
+  background-color: black !important;
+  width: 320px;
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  border-width: 2px;
+}
+
+
+
+
 /* Add Event End */
 
 /* Register Form Start  */
@@ -774,3 +826,11 @@ h2.getting-events-error-header {
 
 /* Footer New End */
 
+
+/* Upcoming event start */
+
+.upcoming-events-container {
+  display: flex;
+}
+
+/* Upcoming event end  */

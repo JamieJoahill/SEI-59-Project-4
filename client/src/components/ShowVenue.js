@@ -5,6 +5,7 @@ import axios from 'axios'
 
 const ShowVenue = () => {
   const [venue, setVenue] = useState([])
+  const [events, setEvents] = useState([])
   const [hasError, setHasError] = useState(false)
   const { id } = useParams()
 
@@ -20,7 +21,36 @@ const ShowVenue = () => {
       }
     }
     getData()
+
+    const getEvents = async () => {
+      try {
+        const { data } = await axios.get('/api/events')
+        setEvents(data)
+      } catch (err) {
+        console.log('Err', err)
+      }
+    }
+    getEvents()
   }, [id])
+
+  console.log('Events ->', events)
+
+  const filteredByVenue = events.filter(
+    (event) => event.venue.name === venue.name
+  )
+
+  console.log('Filtered by venue ->', filteredByVenue)
+
+  const convertDate = (date) => {
+    const newDate = new Date(date)
+    const dateArr = []
+    const newStringDate = []
+    dateArr.push(newDate.toString().slice(0, 10).split(' '))
+    newStringDate.push(dateArr[0][0])
+    newStringDate.push(dateArr[0][2])
+    newStringDate.push(dateArr[0][1])
+    return newStringDate.toString().split(',').join(' ')
+  }
 
   return (
     <Fragment>
@@ -48,11 +78,17 @@ const ShowVenue = () => {
         </div>
       </div>
       <div className='section container venue-info-container'>
-        <div className="venue-about">
+        <div className='venue-about'>
           <h4 className='mb-5'>About</h4>
-          <p>Strongroom is an eclectic, independently-owned bar and late night venue that also happens to be home to one of Londons award winning studios. Run by a close-knit team and surrounded by an inspiring mix of artists and creative businesses that help build Strongrooms event listings.</p>
+          <p>
+            Strongroom is an eclectic, independently-owned bar and late night
+            venue that also happens to be home to one of Londons award winning
+            studios. Run by a close-knit team and surrounded by an inspiring mix
+            of artists and creative businesses that help build Strongrooms event
+            listings.
+          </p>
         </div>
-        <div className="venue-info">
+        <div className='venue-info'>
           <h4 className='mb-5'>Information</h4>
           <ul>
             <li className='mb-5'>
@@ -62,12 +98,61 @@ const ShowVenue = () => {
             <li className='mb-5'>
               <h5 className='mb-2'>Address</h5>
               <p>{venue.address}</p>
-              
-              <a href={`https://www.google.com/maps/place/${venue.address}`} target="_blank" rel="noreferrer"> Get directions
-              </a>
 
+              <a
+                href={`https://www.google.com/maps/place/${venue.address}`}
+                target='_blank'
+                rel='noreferrer'
+              >
+                {' '}
+                Get directions
+              </a>
             </li>
           </ul>
+        </div>
+      </div>
+      <div className='section container'>
+        <h4 className='mb-5'>Upcoming events</h4>
+        <div className='upcoming-events-container'>
+          {/* Insert upcoming events here */}
+          {filteredByVenue.map((event) => {
+            return (
+              <div key={event.id} className='column is-one-quarter-desktop is-one-third-tablet'>
+                <div className='custom-card'>
+                  <Link to={`/events/${event.id}/`}>
+                    <div className='custom-card-image'>
+                      <figure className='image image-is-1by1'>
+                        <img src={event.photo} alt={event.title} />
+                      </figure>
+                    </div>
+
+                    <div className='custom-card-content mt-2'>
+                      <div className='card-title'>
+                        {event.title.length < 20 ? (
+                          <h3 className='title is-3 white-text'>
+                            {event.title}
+                          </h3>
+                        ) : (
+                          <h4 className='title is-4 white-text'>
+                            {event.title}
+                          </h4>
+                        )}
+                      </div>
+                    </div>
+                  </Link>
+
+                  <p className='custom-date'>
+                    {convertDate(event.date)} {event.start_time}
+                  </p>
+
+                  <div className='venue-wrapper'>
+                    <p className='venue-name'>{event.venue.name}</p>
+                    <p className='venue-location'>{event.location}</p>
+                  </div>
+                </div>
+              </div>
+            )
+          })}
         </div>
       </div>
       <div className='section'></div>

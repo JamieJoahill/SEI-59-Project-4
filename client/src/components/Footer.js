@@ -11,7 +11,7 @@ const Footer = () => {
         </div>
         <div className="nice">
           <div className="footer-header">
-            <h6 className='mb-5 has-text-black'>NICE</h6>
+            <h6 className='mb-5 has-text-black'>DICE</h6>
             <ul className="ul-footer-elements">
               <li>About</li>
               <li>Jobs</li>

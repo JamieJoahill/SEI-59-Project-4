@@ -1,12 +1,35 @@
 /* eslint-disable no-unused-vars */
 import React, { useEffect, useState } from 'react'
 import axios from 'axios'
-// import { getTokenFromLocalStorage } from './Helpers/auth'
 import { ImageUploadField } from './ImageUploadField'
 import { headers } from '../lib/headers'
 import { getPayLoad } from './Helpers/auth'
+import { useParams } from 'react-router-dom'
 
-const AddEvent = () => {
+
+
+const UpdateEvent = () => {
+
+  console.log(getPayLoad().sub)
+
+  const [updatedEvent, setUpdateEvent] = useState([])
+  const [hasErrors, setHasErrors] = useState(false)
+  const { id } = useParams()
+
+  useEffect(() => {
+    const getData = async () => {
+      try {
+        const { data } = await axios.get(`http://localhost:8000/api/events/${id}/`)
+        setUpdateEvent(data)
+        // setFormData(data)
+      } catch (err) {
+        setHasErrors(true)
+      }
+    }
+    getData()
+  }, [id])
+
+
   const [formData, setFormData] = useState({
     title: '',
     description: '',
@@ -45,6 +68,7 @@ const AddEvent = () => {
     capacity: '',
   })
 
+
   const handleChange = (event) => {
     const newFormData = { ...formData, [event.target.name]: event.target.value }
     setFormData(newFormData)
@@ -54,27 +78,17 @@ const AddEvent = () => {
     setFormData({ ...formData, photo: url })
   }
 
-  // console.log('Get User ID -> ', getPayLoad().sub)
-
-  // console.log('formData ->', JSON.stringify(formData))
-
-  // console.log('errorData ->', errorData)
-
-  // console.log('headers->', headers)
-
   const handleSubmit = async (event) => {
     event.preventDefault()
     try {
-      console.log('Submitted data ->', formData)
-      const newFormData = { ...formData }
-      newFormData.category = 1
-      newFormData.venue = 1
-      await axios.post('http://localhost:8000/api/events/', newFormData, headers)
+      await axios.post('http://localhost:8000/api/events/', formData, headers)
     } catch (err) {
       console.log('Form Submit Error - >', err)
       setErrorData(err)
     }
   }
+
+  console.log('Form Data ->', updatedEvent)
 
   const handleFormCancel = () => {
     setFormData({
@@ -113,8 +127,6 @@ const AddEvent = () => {
     }
     setVenueData(newFormData)
   }
-  // console.log('Form Data ->', formData)
-  // console.log('Venue Data ->', venueData)
 
   const handleCategorySubmit = async (event) => {
     event.preventDefault()
@@ -182,24 +194,15 @@ const AddEvent = () => {
     getAllVenues()
   }, [])
 
-  console.log('Form Data ->', formData)
-
-  // const handleClick = () => {
-  //   setFormData({
-  //     username: '',
-  //     email: '',
-  //     password: '',
-  //     password_confirmation: '',
-  //   })
 
   return (
-    <div className='form-wrapper mb-6'>
-      <form className='section container columns' onSubmit={handleSubmit}>
-        <div className='column is-two-fifths container'>
+    <div className="form-wrapper mb-6">
+      <form className="section container columns" onSubmit={handleSubmit}>
+        <div className="column is-two-fifths container">
           <div className='register-head-lines section'>
-            <h3 className='title has-text-white'>Create your event</h3>
+            <h3 className='title has-text-white'>Update your event</h3>
             <p className='has-text-light'>
-              Create one of the best nights out in your city.
+              Update one of the best nights out in your city.
             </p>
           </div>
 
@@ -363,8 +366,11 @@ const AddEvent = () => {
               </button>
             </div>
           </div>
+
+
         </div>
       </form>
+
 
       {/* Category Modal */}
       <div className='modal' id='category-modal'>
@@ -521,8 +527,13 @@ const AddEvent = () => {
         </div>
       </div>
 
+
+
+
+
+
     </div>
   )
 }
 
-export default AddEvent
+export default UpdateEvent

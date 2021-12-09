@@ -213,3 +213,179 @@
         </h2>
       )}
     </div>
+
+
+// Old Form
+
+{/* Old Form */}
+
+<div className="field is-two-fifths container">
+<label className="label">Title</label>
+<div className="control">
+  <input 
+    type="text" 
+    className="input" 
+    placeholder="Event title"
+    name="title"
+    value={formData.title}
+    onChange={handleChange}
+    errors={errorData}
+  />
+</div>
+</div>
+
+<div className="field is-two-fifths container">
+<label className="label">Description</label>
+<div className="control">
+  <textarea 
+    type="text" 
+    className="textarea" 
+    placeholder="Enter your description"
+    name="description"
+    value={formData.description}
+    onChange={handleChange}
+    errors={errorData}
+  />
+</div>
+</div>
+
+<div className="field is-two-fifths container">
+<div className="control">
+  <ImageUploadField
+    value={formData.photo}
+    name="photo"
+    handleImageUrl={handleImageUrl}
+  />
+</div>
+</div>
+
+{/* Date */}
+<div className="field is-two-fifths container">
+<label className="label">Date</label>
+<div className="control">
+  <input 
+    type="date" 
+    className="input"
+    name="date"
+    value={formData.date}
+    onChange={handleChange}
+    errors={errorData}
+  />
+</div>
+</div>
+
+{/* Photo Upload */}
+
+{/* Location */}
+<div className="field is-two-fifths container">
+<label className="label">Location</label>
+<div className="control">
+  <input 
+    type="text" 
+    className="input" 
+    placeholder="e.g. Shoreditch, London"
+    name="location"
+    value={formData.location}
+    onChange={handleChange}
+    errors={errorData}
+  />
+</div>
+</div>
+
+{/* Start time */}
+<div className="field is-two-fifths container">
+<label className="label">Start Time</label>
+<div className="control">
+  <input 
+    type="time" 
+    className="input"
+    name="start_time"
+    placeholder={formData.start_time}
+    value={formData.start_time}
+    onChange={handleChange}
+    errors={errorData}
+  />
+</div>
+</div>
+
+{/* Finish time */}
+<div className="field is-two-fifths container">
+<label className="label">Finish Time</label>
+<div className="control">
+  <input 
+    type="time" 
+    className="input"
+    name="finish_time"
+    placeholder={formData.finish_time}
+    value={formData.finish_time}
+    onChange={handleChange}
+    errors={errorData}
+  />
+</div>
+</div>
+
+{/* Category */}
+<div className="field is-two-fifths container">
+<label className="label">Category</label>
+<div className="control">
+  <div className="select">
+    <select name="category" onChange={handleChange}>
+      <option>Select Category</option>
+      {categories.map(category => {
+        return (
+          <option key={category.id} value={category.id}>{category.category}</option>
+        )
+      })}
+    </select>
+  </div>
+  <i className="fas fa-plus" onClick={toggleCategoryModal}></i>
+</div>
+</div>
+
+
+{/* Venue */}
+<div className="field is-two-fifths container">
+<label className="label">Venue</label>
+<div className="control">
+  <div className="select">
+    <select name="venue" onChange={handleChange}>
+      <option value="">Select Venue</option>
+      {venues.map(venue => {
+        return (
+          <option key={venue.id} value={venue.id}>{venue.name}</option>
+        )
+      })}
+    </select>
+  </div>
+  <i className="fas fa-plus" onClick={toggleVenueModal}></i>
+</div>
+</div>
+
+<div className="field is-grouped">
+<div className="control">
+  <button className="button is-primary">Submit</button>
+</div>
+<div className="control">
+  <button className="button" onClick={handleFormCancel}>Cancel</button>
+</div>
+</div>
+
+{/* Template */}
+
+          {/* <div className='field is-two-fifths container column justify-input'>
+            <div className='field is-two-fifths'>
+              <input
+                className='form-input'
+                type='text'
+                placeholder='Title'
+                name='title'
+                value={formData.title}
+                onChange={handleChange}
+                autoComplete='off'
+                errors={errorData}
+              />
+            </div>
+          </div> */}
+
+
+          {/* Template */}

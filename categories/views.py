@@ -7,6 +7,8 @@ from rest_framework.views import APIView
 from rest_framework.response import Response
 from rest_framework import status
 from .serializers import CategorySerializer
+from events.serializers import PopulatedEventSerializer
+# from .models import Event
 
 class CategoryDetailView(APIView):
     def get(self, request, pk):
@@ -19,11 +21,16 @@ class CategoryListView(APIView):
 
     # Create a Category
     def post(self, request):
-        pass
+        category = CategorySerializer(data = request.data)
+        if category.is_valid():
+            category.save()
+            return Response(category.data, status=status.HTTP_201_CREATED)
+        else:
+            return Response(category.errors, status=status.HTTP_422_UNPROCESSABLE_ENTITY)
 
 
     # Get all Categories
     def get(self, _request):
-        categories = Category.object.all()
+        categories = Category.objects.all()
         serialized_categories = CategorySerializer(categories, many=True)
         return Response(serialized_categories.data, status=status.HTTP_200_OK)

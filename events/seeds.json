@@ -1,0 +1,162 @@
+[
+{
+  "model": "events.event",
+  "pk": 9,
+  "fields": {
+    "title": "Certified Bangers",
+    "description": "Certified Bangers is back!  A night dedicated to playing songs we certify as bangers; we're anti-genre, pro-good music !",
+    "date": "2021-12-10",
+    "photo": "https://dice-media.imgix.net/attachments/2021-08-12/64b4baf3-ae46-4edf-b435-19a9231e56b0.jpg?rect=0%2C0%2C800%2C800&auto=format%2Ccompress&q=80&w=328&fit=max&dpr=1",
+    "location": "Shoreditch, London",
+    "start_time": "9:00PM",
+    "finish_time": "3:00AM",
+    "category": 1,
+    "venue": 1,
+    "owner": 1
+  }
+},
+{
+  "model": "events.event",
+  "pk": 10,
+  "fields": {
+    "title": "Strongroom's Christmas Bash",
+    "description": "Join us as we party on the LAST DAY WE'RE OPEN BEFORE CHRISTMAS! We have amazing resident DJ's Baby Danger, Witch Tits and Dick Bastardly playing a huge range of ultimate bangers - Christmassy and non Christmassy! Drinks will be poured (and spilt) and the dancefloor will be poppin' like prosecco.Free entry, come and dance with us!",
+    "date": "2021-12-17",
+    "photo": "https://res.cloudinary.com/dmpvulj3q/image/upload/v1639046762/sei_project_4/ddd96b7c-2f24-4020-8201-edd26492c5ec_jlyfmx.jpg",
+    "location": "Shoreditch, London",
+    "start_time": "9:00PM",
+    "finish_time": "3:00AM",
+    "category": 1,
+    "venue": 1,
+    "owner": 1
+  }
+},
+{
+  "model": "events.event",
+  "pk": 11,
+  "fields": {
+    "title": "APOCALYPSO!",
+    "description": "Join DJ Vom Cruise for Strongroom's last Friday before Christmas! Hear a range of disco, funk, soul and synths.",
+    "date": "2021-12-17",
+    "photo": "https://res.cloudinary.com/dmpvulj3q/image/upload/v1639046994/sei_project_4/9a98b337-893d-46f0-adc8-3fe6cc3c2d21_yls2tn.jpg",
+    "location": "Shoreditch, London",
+    "start_time": "9:00PM",
+    "finish_time": "3:00AM",
+    "category": 1,
+    "venue": 1,
+    "owner": 1
+  }
+},
+{
+  "model": "events.event",
+  "pk": 12,
+  "fields": {
+    "title": "Baba Yaga's Free Strongroom All Dayer",
+    "description": "Baba Yaga's Hut Presents: Luminous Bodies, Modern Technology, The Vega Bodegas, Valve, HAQ 123 & Semi Feral",
+    "date": "2021-12-17",
+    "photo": "https://res.cloudinary.com/dmpvulj3q/image/upload/v1639047149/sei_project_4/0d8e35e5-1e65-4813-a91a-3eaf0895e70b_y3uqan.jpg",
+    "location": "Shoreditch, London",
+    "start_time": "9:00PM",
+    "finish_time": "3:00AM",
+    "category": 15,
+    "venue": 1,
+    "owner": 1
+  }
+},
+{
+  "model": "events.event",
+  "pk": 13,
+  "fields": {
+    "title": "Sucker Presents South Coast Casino + More",
+    "description": "Top new music tastemakers Sucker are BACK bringing 3 of London's finest up and coming bands to Strongroom on Saturday 11th December! There will be indie-rock in from co-headliners South Coast Casino and Two Weeks In Nashville, with support from moody-rockers Blue Wit. It's free entry, so come on down!",
+    "date": "2021-12-11",
+    "photo": "https://res.cloudinary.com/dmpvulj3q/image/upload/v1639047293/sei_project_4/3cd8ec8f-aef0-41e4-9599-40c6821f1c69_xjws7v.jpg",
+    "location": "Shoreditch, London",
+    "start_time": "8:00PM",
+    "finish_time": "3:00AM",
+    "category": 15,
+    "venue": 1,
+    "owner": 1
+  }
+},
+{
+  "model": "events.event",
+  "pk": 14,
+  "fields": {
+    "title": "The Mo Pleasure Jazz Trio (First House)",
+    "description": "The Piano Bar Soho jazz experience is one not to be missed, tucked away in a secret townhouse in the heart of Soho. Our festive programme is part of this year’s special Christmas Festival in our own winter wonderland and themed cocktail lounges.Morris \"Mo\" Pleasure's professional career spans the world of American R&B and pop, through his work with Ray Charles, George Duke, Earth Wind and Fire, Michael Jackson, Chaka Khan, Mary J Blige, Natalie Cole, David Foster and Bette Midler to name a few.",
+    "date": "2021-12-10",
+    "photo": "https://res.cloudinary.com/dmpvulj3q/image/upload/v1639047589/sei_project_4/ceced563-019f-426c-908d-d39aaa925296_lwf5rs.jpg",
+    "location": "London",
+    "start_time": "6:00PM",
+    "finish_time": "8:00PM",
+    "category": 15,
+    "venue": 2,
+    "owner": 1
+  }
+},
+{
+  "model": "events.event",
+  "pk": 15,
+  "fields": {
+    "title": "Cocktail Swing with Rikette Genesis (First House)",
+    "description": "The Piano Bar Soho jazz experience is one not to be missed, tucked away in a secret townhouse in the heart of Soho. Our festive programme is part of this year’s special Christmas Festival in our own winter wonderland and themed cocktail lounges.Morris \"Mo\" Pleasure's professional career spans the world of American R&B and pop, through his work with Ray Charles, George Duke, Earth Wind and Fire, Michael Jackson, Chaka Khan, Mary J Blige, Natalie Cole, David Foster and Bette Midler to name a few.",
+    "date": "2021-12-10",
+    "photo": "https://res.cloudinary.com/dmpvulj3q/image/upload/v1639048223/sei_project_4/92c33f6f-0f8a-4920-9c74-3077f58e9ca1_teybso.jpg",
+    "location": "London",
+    "start_time": "6:00PM",
+    "finish_time": "8:00PM",
+    "category": 15,
+    "venue": 2,
+    "owner": 1
+  }
+},
+{
+  "model": "events.event",
+  "pk": 16,
+  "fields": {
+    "title": "EDEN & Special Guests - Matinee Show",
+    "description": "EYOE Presents - EDEN + Special Guests",
+    "date": "2021-12-12",
+    "photo": "https://res.cloudinary.com/dmpvulj3q/image/upload/v1639050135/sei_project_4/d06075b0-2b29-416f-a4f3-65b18756be61_odr5ec.jpg",
+    "location": "London",
+    "start_time": "6:00PM",
+    "finish_time": "8:00PM",
+    "category": 15,
+    "venue": 3,
+    "owner": 1
+  }
+},
+{
+  "model": "events.event",
+  "pk": 16,
+  "fields": {
+    "title": "Reginald D Hunter",
+    "description": "Bush Hall Presents returns with a headline set from REGINALD D HUNTER, whose TV appearances include Never Mind the Buzzcocks, QI and Have I Got News For You?, as well as his popular Songs of the South and Songs of the Border BBC2 series.",
+    "date": "2021-12-17",
+    "photo": "https://res.cloudinary.com/dmpvulj3q/image/upload/v1639050477/sei_project_4/79b93a9d-b979-4001-83ce-9e3965be1cb7_yiyyim.jpg",
+    "location": "London",
+    "start_time": "7:00PM",
+    "finish_time": "8:00PM",
+    "category": 16,
+    "venue": 3,
+    "owner": 1
+  }
+},
+{
+  "model": "events.event",
+  "pk": 17,
+  "fields": {
+    "title": "Peeping Drexels, fatdog, The Midnight Itch",
+    "description": "Festive Peeping Drexels show with fatdog, ton he M idnight Itch and one more.",
+    "date": "2021-12-10",
+    "photo": "https://res.cloudinary.com/dmpvulj3q/image/upload/v1639050788/sei_project_4/deb21891-4e07-43b1-a3ec-f0ad3a4b9d2d_ldzekj.jpg",
+    "location": "London",
+    "start_time": "8:00PM",
+    "finish_time": "10:00PM",
+    "category": 15,
+    "venue": 4,
+    "owner": 1
+  }
+}
+]

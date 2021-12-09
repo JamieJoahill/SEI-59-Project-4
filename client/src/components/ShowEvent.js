@@ -64,25 +64,25 @@ const ShowEvent = () => {
               <div className="column blue-column container-main">
                 <h1 className="title">{event.title}</h1>
                 <h5 className="title is-5">{event.venue.name}</h5>
-                <div className="custom-date-time">
+                <div className="custom-date-time mb-3">
                   <p>{convertDate(event.date)}</p>
                   <p>{event.start_time}</p>
                 </div>
                 <div className="category-location">
                   <p className="category"><i className="fas fa-tag"></i> {event.category.category}</p>
-                  <p className="location"><i className="fas fa-map-marker-alt"></i> {event.location}</p>
+                  <p className="location"><i className="fas fa-map-marker-alt"></i>{event.location}</p>
                 </div>
                 <div className="about">
                   <h4 className="title is-4">About</h4>
                   <p>{event.description}</p>
                   <p>Presented By {event.venue.name}</p>
                 </div>
-                <div className="venue">
+                <div className="venue split-venue">
                   <div className="venue-info">
                     <div className="line"></div>
-                    <h4 className="title is-4 poppins">Venue</h4>
+                    <h4 className="title is-4">Venue</h4>
                     <Link to={`/venues/${event.venue.id}/`}>
-                      <h3 className="title is-3">{event.venue.name}</h3>
+                      <h3 className="title is-4 mb-3">{event.venue.name}</h3>
                     </Link>
                     <p>
                       {event.venue.address}
@@ -97,8 +97,9 @@ const ShowEvent = () => {
                     </p>
                     <p>{event.venue.capacity} capacity</p>
                   </div>
-                  <div className="venue-image">
-                    <figure className="image is-128x128">
+                  
+                  <div className="event-image-container">
+                    <figure className="image">
                       <img src={event.venue.venue_image} alt={event.title} className="show-event-custom-image"/>
                     </figure>
                   </div>
