@@ -52,6 +52,8 @@ const ShowVenue = () => {
     return newStringDate.toString().split(',').join(' ')
   }
 
+  { venue ? document.title = `${venue.name} | RICE` : ''}
+
   return (
     <Fragment>
       <div className='venue-overlay'>
@@ -78,16 +80,16 @@ const ShowVenue = () => {
         </div>
       </div>
       <div className='section container venue-info-container'>
-        <div className='venue-about'>
-          <h4 className='mb-5'>About</h4>
-          <p>
-            Strongroom is an eclectic, independently-owned bar and late night
-            venue that also happens to be home to one of Londons award winning
-            studios. Run by a close-knit team and surrounded by an inspiring mix
-            of artists and creative businesses that help build Strongrooms event
-            listings.
-          </p>
-        </div>
+        {venue.about ?
+          <div className='venue-about'>
+            <h4 className='mb-5'>About</h4>
+            <p>
+              {venue.about}
+            </p>
+          </div>
+          :
+          <></>
+        }
         <div className='venue-info'>
           <h4 className='mb-5'>Information</h4>
           <ul>
@@ -113,7 +115,7 @@ const ShowVenue = () => {
       </div>
       <div className='section container'>
         <h4 className='mb-5'>Upcoming events</h4>
-        <div className='upcoming-events-container'>
+        <div className='upcoming-events-container columns is-multiline'>
           {/* Insert upcoming events here */}
           {filteredByVenue.map((event) => {
             return (
@@ -129,11 +131,11 @@ const ShowVenue = () => {
                     <div className='custom-card-content mt-2'>
                       <div className='card-title'>
                         {event.title.length < 20 ? (
-                          <h3 className='title is-3 white-text'>
+                          <h3 className='title is-3 has-text-black mb-2'>
                             {event.title}
                           </h3>
                         ) : (
-                          <h4 className='title is-4 white-text'>
+                          <h4 className='title is-4 has-text-black mb-2'>
                             {event.title}
                           </h4>
                         )}
@@ -146,7 +148,7 @@ const ShowVenue = () => {
                   </p>
 
                   <div className='venue-wrapper'>
-                    <p className='venue-name'>{event.venue.name}</p>
+                    <p className='venue-name '>{event.venue.name}</p>
                     <p className='venue-location'>{event.location}</p>
                   </div>
                 </div>

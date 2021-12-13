@@ -28,4 +28,4 @@ class UserSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = User
-        fields = ('username', 'email', 'password', 'password_confirmation',) # alt to providing all the fields, specifying fields
+        fields = ('username', 'email', 'password', 'password_confirmation', 'id') # alt to providing all the fields, specifying fields

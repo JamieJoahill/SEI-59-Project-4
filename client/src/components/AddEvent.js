@@ -1,12 +1,14 @@
 /* eslint-disable no-unused-vars */
 import React, { useEffect, useState } from 'react'
 import axios from 'axios'
+import { useHistory } from 'react-router-dom'
 // import { getTokenFromLocalStorage } from './Helpers/auth'
 import { ImageUploadField } from './ImageUploadField'
 import { headers } from '../lib/headers'
 import { getPayLoad } from './Helpers/auth'
 
 const AddEvent = () => {
+  const history = useHistory()
   const [formData, setFormData] = useState({
     title: '',
     description: '',
@@ -33,6 +35,8 @@ const AddEvent = () => {
     owner: getPayLoad().sub,
   })
 
+  const [errors, setErrors] = useState(false)
+
   const [categoryData, setCategoryData] = useState({
     category: '',
   })
@@ -43,7 +47,40 @@ const AddEvent = () => {
     venue_image:
       'https://res.cloudinary.com/dmpvulj3q/image/upload/v1638807304/sei_project_4/Image-Coming-Soon-Placeholder-e1518111259296-768x577-2_rnpvni.png',
     capacity: '',
+    about: '',
   })
+
+  const [categories, setCategories] = useState([])
+  const [venues, setVenues] = useState([])
+
+  const handleFormCancel = () => {
+    setFormData({
+      title: '',
+      description: '',
+      date: '',
+      photo: '',
+      location: '',
+      start_time: '',
+      finish_time: '',
+      category: '',
+      venue: '',
+    })
+  }
+
+  const handleCategoryCancel = () => {
+    setCategoryData({
+      category: '',
+    })
+  }
+
+  const handleVenueCancel = () => {
+    setVenueData({
+      name: '',
+      address: '',
+      venue_image: '',
+      capacity: '',
+    })
+  }
 
   const handleChange = (event) => {
     const newFormData = { ...formData, [event.target.name]: event.target.value }
@@ -52,6 +89,10 @@ const AddEvent = () => {
 
   const handleImageUrl = (url) => {
     setFormData({ ...formData, photo: url })
+  }
+
+  const handleVenueImageUrl = (url) => {
+    setVenueData({ ...venueData,  venue_image: url })
   }
 
   // console.log('Get User ID -> ', getPayLoad().sub)
@@ -67,27 +108,16 @@ const AddEvent = () => {
     try {
       console.log('Submitted data ->', formData)
       const newFormData = { ...formData }
-      newFormData.category = 1
-      newFormData.venue = 1
+      // newFormData.category = 1
+      // newFormData.venue = 1
+      // console.log('Submitted Data ->', newFormData)
       await axios.post('http://localhost:8000/api/events/', newFormData, headers)
+      history.push('/events')
     } catch (err) {
-      console.log('Form Submit Error - >', err)
-      setErrorData(err)
+      console.log('Form Submit Error - >', err.response.data)
+      setErrorData(err.response.data)
+      setErrors(true)
     }
-  }
-
-  const handleFormCancel = () => {
-    setFormData({
-      title: '',
-      description: '',
-      date: '',
-      photo: '',
-      location: '',
-      start_time: '',
-      finish_time: '',
-      category: '',
-      venue: '',
-    })
   }
 
   const toggleCategoryModal = () => {
@@ -142,24 +172,6 @@ const AddEvent = () => {
     }
   }
 
-  const handleCategoryCancel = () => {
-    setCategoryData({
-      category: '',
-    })
-  }
-
-  const handleVenueCancel = () => {
-    setVenueData({
-      name: '',
-      address: '',
-      venue_image: '',
-      capacity: '',
-    })
-  }
-
-  const [categories, setCategories] = useState([])
-  const [venues, setVenues] = useState([])
-
   useEffect(() => {
     const getAllCategories = async () => {
       try {
@@ -184,13 +196,7 @@ const AddEvent = () => {
 
   console.log('Form Data ->', formData)
 
-  // const handleClick = () => {
-  //   setFormData({
-  //     username: '',
-  //     email: '',
-  //     password: '',
-  //     password_confirmation: '',
-  //   })
+  document.title = 'RICE | Create an event'
 
   return (
     <div className='form-wrapper mb-6'>
@@ -201,6 +207,19 @@ const AddEvent = () => {
             <p className='has-text-light'>
               Create one of the best nights out in your city.
             </p>
+            {errors && 
+              <div className='event-errors-container mt-3'>
+                <div><span className='has-text-white'>Title:</span> <span className='has-text-danger'>{errorData.title}</span></div>
+                <div><span className='has-text-white'>Description:</span> <span className='has-text-danger'>{errorData.description}</span></div>
+                <div><span className='has-text-white'>Image:</span> <span className='has-text-danger'>{errorData.photo}</span></div>
+                <div><span className='has-text-white'>Date:</span> <span className='has-text-danger'>{errorData.date}</span></div>
+                <div><span className='has-text-white'>Location:</span> <span className='has-text-danger'>{errorData.location}</span></div>
+                <div><span className='has-text-white'>Start time:</span> <span className='has-text-danger'>{errorData.start_time}</span></div>
+                <div><span className='has-text-white'>Finish time:</span> <span className='has-text-danger'>{errorData.finish_time}</span></div>
+                <div><span className='has-text-white'>Category:</span> <span className='has-text-danger'>{errorData.category}</span></div>
+                <div><span className='has-text-white'>Venue:</span> <span className='has-text-danger'>{errorData.venue}</span></div>
+              </div>
+            }
           </div>
 
           <div className='field is-two-fifths container column justify-input'>
@@ -253,6 +272,7 @@ const AddEvent = () => {
                 placeholder='Date'
                 value={formData.date}
                 onChange={handleChange}
+                autoComplete='off'
                 errors={errorData}
               />
             </div>
@@ -268,6 +288,7 @@ const AddEvent = () => {
                 name='location'
                 value={formData.location}
                 onChange={handleChange}
+                autoComplete='off'
                 errors={errorData}
               />
             </div>
@@ -288,6 +309,7 @@ const AddEvent = () => {
                 value={formData.start_time}
                 onChange={handleChange}
                 errors={errorData}
+                autoComplete='off'
               />
             </div>
           </div>
@@ -306,6 +328,7 @@ const AddEvent = () => {
                 value={formData.finish_time}
                 onChange={handleChange}
                 errors={errorData}
+                autoComplete='off'
               />
             </div>
           </div>
@@ -337,7 +360,7 @@ const AddEvent = () => {
               <div className='select'>
                 <select name='venue' onChange={handleChange}>
                   <option value=''>Select Venue</option>
-                  {venues.map((venue) => {
+                  {venues.map((venue, index) => {
                     return (
                       <option key={venue.id} value={venue.id}>
                         {venue.name}
@@ -357,7 +380,6 @@ const AddEvent = () => {
             <div className='control'>
               <button
                 className='button is-rounded form-button'
-                
               >
                 CANCEL
               </button>
@@ -481,8 +503,22 @@ const AddEvent = () => {
                     <ImageUploadField
                       value={venueData.venue_image}
                       name='venue_image'
-                      handleImageUrl={() => handleImageUrl()}
+                      // handleImageUrl={() => handleImageUrl()}
+                      handleImageUrl={handleVenueImageUrl}
                     />
+                  </div>
+                </div>
+                
+                <div className='field is-two-fifths container'>
+                  <div className='control'>
+                    <textarea 
+                      className="textarea" 
+                      placeholder="Venue Description optional"
+                      name='about'
+                      value={venueData.about}
+                      onChange={handleVenueChange}
+                      errors={errorData}
+                    ></textarea>
                   </div>
                 </div>
 

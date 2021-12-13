@@ -1,13 +1,19 @@
 /* eslint-disable no-unused-vars */
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import axios from 'axios'
 import { useHistory } from 'react-router'
+
 
 const Login = () => {
 
   const history = useHistory()
 
   const [formData, setFormData] = useState({
+    email: '',
+    password: '',
+  })
+
+  const [errors, setErrors] = useState({
     email: '',
     password: '',
   })
@@ -34,8 +40,11 @@ const Login = () => {
       setTokenToLocalStorage(data.token)
       setUsernameToLocalStorage(data.message)
       history.push('/')
+      location.reload()
       handleClick()
     } catch (err) {
+      // console.log(err.response.data.message)
+      setErrors(err.response.data.message)
       setError(true)
     }
   }
@@ -47,6 +56,7 @@ const Login = () => {
     })
   }
 
+  document.title = 'RICE | Login'
 
   return (
     <div className='section register-container'>
@@ -55,6 +65,9 @@ const Login = () => {
         <p className='has-text-light'>
           Create the best nights out in your city.
         </p>
+        {error && 
+          <div className='mt-5 has-text-danger'>Invalid Log in details</div>
+        }
       </div>
       <form className='section container' onSubmit={handleSubmit}>
         <div className='field is-two-fifths container column justify-input'>

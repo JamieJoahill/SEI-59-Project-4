@@ -176,6 +176,20 @@
 
 /* Footer End */
 
+.hero-words {
+  background-color: none;
+  position: absolute;
+  z-index: 10;
+  top: 50%;
+  position: absolute;
+  margin-left: auto;
+  margin-right: auto;
+  left: 0;
+  right: 0;
+  text-align: center;
+  font-size: 30px;
+}
+
 .hero-container {
   height: 110vh !important;
 }
@@ -305,7 +319,7 @@
 }
 
 .show-event-count {
-    margin-bottom: 15px;
+    margin-bottom: 5px;
 }
 
 /* Custom Card Start */
@@ -326,6 +340,10 @@
 
 .venue-name {
   color: rgb(255, 238, 0);
+}
+
+.yellow {
+  color: rgb(255, 238, 0) !im;
 }
 
 .events-margin {
@@ -370,6 +388,11 @@
 
 .dark-overlay {
   background-color:rgb(12, 12, 12);
+  height: 110%;
+  display: block;
+}
+
+.event-vh {
   height: 110vh;
 }
 
@@ -579,11 +602,12 @@ div .custom-date-time p {
 
 .venue-about {
   /* border: 1px solid red; */
-  width: 60%;
+  width: 100%;
+  padding-right: 30px;
 }
 
 .venue-info {
-  width: 40%;
+  width: 100%;
 }
 
 /* Show venue end */
@@ -657,11 +681,20 @@ div .custom-date-time p {
   border-top: hidden;
   border-bottom: #fff;
   border-bottom: 1px solid #fff;
-  width: 350px;
+  width: 370px;
   height: 40px;
   color: #fff;
   font-family: 'Poppins';
   font-size: 26px;
+}
+
+.form-input::-webkit-time-picker-indicator {
+  filter: invert(1);
+}
+
+::-webkit-calendar-picker-indicator {
+  filter: invert(1);
+  font-size: 15px;
 }
 
 .form-input::placeholder {
@@ -744,11 +777,26 @@ h2.getting-events-error-header {
   color: #FFF;
 }
 
+/* .container-main {
+  max-width: 50%;
+  width: 50%;
+  float: left;
+  height: 75vh;
+  overflow-x: scroll;
+  overflow-y: scroll; 
+  overflow: scroll;
+  margin-top: 100px;
+} */
+
 .search-list {
   /* border: 1px solid blue; */
-  width: 100%;
+  width: 105%;
   display: flex;
   justify-content: flex-start;
+  height: 65vh;
+  overflow-x: scroll;
+  overflow-y: scroll; 
+  overflow: scroll;
 }
 
 .list-container {
@@ -758,13 +806,17 @@ h2.getting-events-error-header {
 }
 
 /* Search Page Start */
+
+.search-page-vh {
+  height: 110vh;
+}
 .search-element-container {
   display: flex;
-  width: 100%;
+  width: 90%;
 }
 
 .text-container {
-  width: 100%;
+  width: 910px;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -777,6 +829,10 @@ h2.getting-events-error-header {
 .event-description {
   display: flex;
   flex-direction: column;
+}
+
+.search-line {
+  width: 80%;
 }
 
 /* Search Page End */
@@ -834,3 +890,21 @@ h2.getting-events-error-header {
 }
 
 /* Upcoming event end  */
+
+/* Not Found Start */
+
+.not-found {
+  background-color:rgb(12, 12, 12);
+  height: 100vh;
+  width: 100vw;
+}
+
+.align-error-page {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Not Found End */

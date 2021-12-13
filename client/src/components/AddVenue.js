@@ -73,6 +73,7 @@ const AddVenue = () => {
               />
             </div>
           </div>
+          
 
           <div className="field is-two-fifths container">
             <div className="control">

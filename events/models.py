@@ -13,7 +13,7 @@ class Event(models.Model):
     photo = models.CharField(max_length=1000, default=None)
     location = models.CharField(max_length=500, default=None)
     start_time = models.CharField(max_length=100, default=None)
-    finish_time = models.CharField(max_length=100, default=None)
+    finish_time = models.CharField(max_length=100, default=None, null=True, blank=True)
     category = models.ForeignKey('categories.Category', on_delete=models.CASCADE)
     venue = models.ForeignKey('venues.Venue', on_delete=models.CASCADE)
     owner = models.ForeignKey(User, on_delete=models.CASCADE, null=True, blank=True)

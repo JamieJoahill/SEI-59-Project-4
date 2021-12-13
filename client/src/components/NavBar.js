@@ -40,6 +40,7 @@ const NavBar = () => {
 
   const handleLogout = () => {
     window.localStorage.removeItem('token')
+    window.localStorage.removeItem('message')
     history.push('/')
   }
 

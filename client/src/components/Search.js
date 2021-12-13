@@ -65,11 +65,11 @@ const Search = () => {
     newStringDate.push(dateArr[0][1])
     return newStringDate.toString().split(',').join(' ')
   }
-
+  document.title = 'NICE | Discover events'
   // console.log('Filtered Events',filteredEvents())
   console.log('Params', params.event)
   return (
-    <section className='section dark-overlay'>
+    <section className='section dark-overlay search-page-vh'>
       <div className='container push-down smaller-container'>
         <div className='show-search-count mb-5'>
           {filteredEvents.length === 0 ? (
@@ -121,11 +121,17 @@ const Search = () => {
                             <div className='text-container'>
                               <div className='event-description ml-4'>
                                 <Link to={`events/${event.id}/`}>
-                                  <h4 className='title is-4 has-text-white'>
-                                    {event.title}
-                                  </h4>
+                                  {event.title.length < 30 ? 
+                                    <h4 className='title is-4 has-text-white'>
+                                      {event.title}
+                                    </h4>
+                                    :
+                                    <h5 className='title is-5 has-text-white'>
+                                      {event.title}
+                                    </h5>
+                                  }
                                 </Link>
-                                <h3 className='has-text-grey-light'>
+                                <h3 className='has-text-grey-light yellow'>
                                   {convertDate(event.date)}
                                 </h3>
                               </div>
@@ -139,7 +145,7 @@ const Search = () => {
                               </div>
                             </div>
                           </div>
-                          <div className='line mt-5'></div>
+                          <div className='line mt-5 search-line'></div>
                         </div>
                       )
                     })}

@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 import React, { Fragment } from 'react'
 import { BrowserRouter, Switch, Route } from 'react-router-dom'
 import NavBar from './components/NavBar'
@@ -13,6 +14,7 @@ import Search from './components/Search'
 import ShowVenue from './components/ShowVenue'
 import ScrollToTop from './components/ScrollToTop'
 import UpdateEvent from './components/UpdateEvent'
+import NotFound from './components/NotFound'
 
 const App = () => {
   return (
@@ -31,6 +33,7 @@ const App = () => {
           <Route exact path="/venues/:id/" component={ShowVenue} />
           <Route exact path="/register" component={Register} />
           <Route exact path="/login" component={Login} />
+          <Route path="*" component={NotFound}/>
         </Switch>
       </Fragment>
       <Footer />

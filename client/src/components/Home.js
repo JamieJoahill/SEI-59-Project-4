@@ -41,9 +41,12 @@ const Home = () => {
 
   // console.log('User is auth ->',userIsAuth())
 
+  document.title = 'RICE | Discover events'
+
   return (
     <>
       <div className='hero-container'>
+        <p className='hero-words has-text-white'>Discover events from around the world</p>
         <div className='wrapper overlay'>
           <div className=''>
             {/* <video autoPlay muted loop poster className="hero-video" src={video[randomVideo()]}></video> */}
@@ -69,11 +72,11 @@ const Home = () => {
         <div className='right-box'>
           {!userIsAuth() ? (
             <div className='container'>
-              <h4>Join Festivents</h4>
+              <h4>Join RICE</h4>
               <h3>More than just events</h3>
               <p>For the world’s best venues and events</p>
               <Link to='/register'>
-                <button className='button is-medium is-dark button-spacing'>
+                <button className='button is-medium is-rounded is-dark button-spacing'>
                   Join now
                 </button>
               </Link>
@@ -84,7 +87,7 @@ const Home = () => {
               <h3>More than just events</h3>
               <p>For the world’s best venues and events</p>
               <Link to='/events/new'>
-                <button className='button is-medium is-dark button-spacing'>
+                <button className='button is-medium is-rounded is-dark button-spacing'>
                   Create an event
                 </button>
               </Link>
@@ -99,7 +102,7 @@ const Home = () => {
             <h3>Check out our events</h3>
             <p>Thinking of putting on an event?</p>
             <Link to='/events'>
-              <button className='button is-medium is-dark button-spacing'>
+              <button className='button is-medium is-rounded is-dark button-spacing'>
                 View Events
               </button>
             </Link>

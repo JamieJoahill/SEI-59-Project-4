@@ -36,69 +36,51 @@ const ShowEvents = () => {
 
   return (
     <section className="section dark-overlay">
-      <div className="container events-margin">
+      <div className="container events-margin mb-5">
         <div className="show-event-count">
           <div>{events.length} available events</div>
         </div>
         {events.length ?
-          <div className="columns is-multiline">
-            {events.map((event) => {
-              return (
-                <div key={event.id} className="column is-one-quarter-desktop is-one-third-tablet">
+          <section className="section">
+            <div className="columns is-multiline">
+              {events.map((event) => {
+                return (
+                  <div key={event.id} className="column is-one-quarter-desktop is-one-third-tablet">
 
-                  <div className="custom-card">
-                    <Link to={`/events/${event.id}/`}>
+                    <div className="custom-card">
+                      <Link to={`/events/${event.id}/`}>
 
-                      <div className="custom-card-image">
-                        <figure className="image image-is-1by1">
-                          <img src={event.photo} alt={event.title} />
-                        </figure>
-                      </div>
-
-                      <div className="custom-card-content mt-2">
-                        <div className="card-title">
-                          {event.title.length < 20 ?
-                            <h3 className="title is-3 white-text">{event.title}</h3>
-                            :
-                            <h4 className="title is-4 white-text">{event.title}</h4>
-                          }
+                        <div className="custom-card-image">
+                          <figure className="image image-is-1by1">
+                            <img src={event.photo} alt={event.title} />
+                          </figure>
                         </div>
+
+                        <div className="custom-card-content mt-2">
+                          <div className="card-title">
+                            {event.title.length < 20 ?
+                              <h3 className="title is-3 white-text">{event.title}</h3>
+                              :
+                              <h4 className="title is-4 white-text">{event.title}</h4>
+                            }
+                          </div>
+                        </div>
+
+                      </Link>
+
+                      <p className="custom-date">{convertDate(event.date)} {event.start_time}</p>
+
+                      <div className="venue-wrapper">
+                        <p className="venue-name">{event.venue.name}</p>
+                        <p className="venue-location">{event.location}</p>
                       </div>
-
-                    </Link>
-
-                    <p className="custom-date">{convertDate(event.date)} {event.start_time}</p>
-
-                    <div className="venue-wrapper">
-                      <p className="venue-name">{event.venue.name}</p>
-                      <p className="venue-location">{event.location}</p>
+                      
                     </div>
-                    
                   </div>
-
-                  {/* <div className="card">
-                    <div className="card-image">
-                      <figure className="image image-is-1by1">
-                        <img src={event.photo} alt={event.title} />
-                      </figure>
-                    </div>
-                    <div className="card-header">
-                      <div className="card-header-title">
-                        <h2>{event.title}</h2>
-                      </div>
-                    </div>
-                    <div className="card-content">
-                      <p>{event.location}</p>
-                      <hr />
-                      <p>{event.details}</p>
-                    </div>
-                  </div> */}
-
-
-                </div>
-              )
-            })}
-          </div>
+                )
+              })}
+            </div>
+          </section>
           :
           <h2 className="title has-text-centered">
             {hasError ? 

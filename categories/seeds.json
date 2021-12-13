@@ -47,5 +47,12 @@
     "fields": {
       "category": "Comedy"
     }
+  },
+  {
+    "model": "categories.category",
+    "pk": 17,
+    "fields": {
+      "category": "Other"
+    }
   }
 ]
