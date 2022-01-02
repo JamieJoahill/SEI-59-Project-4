@@ -35,11 +35,9 @@ const ShowVenue = () => {
 
   console.log('Events ->', events)
 
-  const filteredByVenue = events.filter(
-    (event) => event.venue.name === venue.name
-  )
+  const filteredByVenue = events.filter((event) => event.venue.name === venue.name)
 
-  console.log('Filtered by venue ->', filteredByVenue)
+  // console.log('Filtered by venue ->', filteredByVenue)
 
   const convertDate = (date) => {
     const newDate = new Date(date)
@@ -114,10 +112,10 @@ const ShowVenue = () => {
         </div>
       </div>
       <div className='section container'>
-        <h4 className='mb-5'>Upcoming events</h4>
+        {/* <h4 className='mb-5'>Upcoming events</h4> */}
         <div className='upcoming-events-container columns is-multiline'>
           {/* Insert upcoming events here */}
-          {filteredByVenue.map((event) => {
+          {/* {filteredByVenue.map((event) => {
             return (
               <div key={event.id} className='column is-one-quarter-desktop is-one-third-tablet'>
                 <div className='custom-card'>
@@ -154,7 +152,7 @@ const ShowVenue = () => {
                 </div>
               </div>
             )
-          })}
+          })} */}
         </div>
       </div>
       <div className='section'></div>
