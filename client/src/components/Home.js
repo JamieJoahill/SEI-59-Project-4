@@ -1,7 +1,7 @@
 /* eslint-disable no-unused-vars */
 import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
-import { getPayLoad } from './Helpers/auth'
+import { getPayLoad } from './helpers/auth'
 
 const Home = () => {
   const [video, setVideo] = useState([

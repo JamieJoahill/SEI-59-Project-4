@@ -5,7 +5,7 @@ import { useHistory } from 'react-router-dom'
 // import { getTokenFromLocalStorage } from './Helpers/auth'
 import { ImageUploadField } from './ImageUploadField'
 import { headers } from '../lib/headers'
-import { getPayLoad } from './Helpers/auth'
+import { getPayLoad } from './helpers/auth'
 
 const AddEvent = () => {
   const history = useHistory()

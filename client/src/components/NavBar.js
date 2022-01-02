@@ -1,7 +1,7 @@
 /* eslint-disable no-unused-vars */
 import React, { useState, useEffect } from 'react'
 import { Link, useLocation, useHistory } from 'react-router-dom'
-import { getPayLoad } from './Helpers/auth'
+import { getPayLoad } from './helpers/auth'
 import * as QueryString from 'query-string'
 // import axios from 'axios'
 

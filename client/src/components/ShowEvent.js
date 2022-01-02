@@ -2,7 +2,7 @@
 import React, { useState, useEffect, Fragment } from 'react'
 import { useParams, Link, useHistory } from 'react-router-dom'
 import axios from 'axios'
-import { convertDate } from  './Helpers/date'
+import { convertDate } from  './helpers/date'
 import { headers } from '../lib/headers'
 
 const ShowEvent = () => {

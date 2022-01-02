@@ -3,9 +3,9 @@ import React, { useEffect, useState } from 'react'
 import axios from 'axios'
 import { ImageUploadField } from './ImageUploadField'
 import { headers } from '../lib/headers'
-import { getPayLoad } from './Helpers/auth'
+import { getPayLoad } from './helpers/auth'
 import { useParams } from 'react-router-dom'
-import { convertDate } from './Helpers/date'
+import { convertDate } from './helpers/date'
 import { useHistory } from 'react-router-dom'
 
 const UpdateEvent = () => {
