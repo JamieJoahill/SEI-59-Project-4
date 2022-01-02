@@ -46,8 +46,6 @@ const NavBar = () => {
 
   const handleSearchSubmit = (event) => {
     event.preventDefault()
-    // console.log('Searched Query ->', input)
-    // setQuery(input)
     history.push(`/search?${QueryString.stringify(query)}`)
   }
 

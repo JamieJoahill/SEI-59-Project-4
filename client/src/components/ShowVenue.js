@@ -35,7 +35,7 @@ const ShowVenue = () => {
 
   console.log('Events ->', events)
 
-  const filteredByVenue = events.filter((event) => event.venue.name === venue.name)
+  // const filteredByVenue = events.filter((event) => event.venue.name === venue.name)
 
   // console.log('Filtered by venue ->', filteredByVenue)
 
