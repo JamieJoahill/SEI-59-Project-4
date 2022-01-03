@@ -13,7 +13,7 @@ const ShowVenue = () => {
     const getData = async () => {
       try {
         const { data } = await axios.get(
-          `http://localhost:8000/api/venues/${id}/`
+          `/api/venues/${id}/`
         )
         setVenue(data)
       } catch (err) {
@@ -24,7 +24,7 @@ const ShowVenue = () => {
 
     const getEvents = async () => {
       try {
-        const { data } = await axios.get('/api/events')
+        const { data } = await axios.get('/api/events/')
         setEvents(data)
       } catch (err) {
         console.log('Err', err)

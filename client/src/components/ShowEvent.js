@@ -16,7 +16,7 @@ const ShowEvent = () => {
   
     const getData = async () => {
       try {
-        const { data } = await axios.get(`http://localhost:8000/api/events/${id}/`)
+        const { data } = await axios.get(`/api/events/${id}/`)
         // console.log('Data ->', data)
         setEvent(data)
       } catch (err) {

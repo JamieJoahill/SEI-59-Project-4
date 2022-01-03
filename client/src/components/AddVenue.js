@@ -32,7 +32,7 @@ const AddVenue = () => {
   const handleSubmit = async (event) => {
     event.preventDefault()
     try {
-      await axios.post('http://localhost:8000/api/venues/', JSON.stringify(formData), headers)
+      await axios.post('/api/venues/', JSON.stringify(formData), headers)
     } catch (err) {
       console.log('Form Submit Error - >', err)
       setErrorData(err)

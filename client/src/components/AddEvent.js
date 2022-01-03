@@ -111,7 +111,7 @@ const AddEvent = () => {
       // newFormData.category = 1
       // newFormData.venue = 1
       // console.log('Submitted Data ->', newFormData)
-      await axios.post('http://localhost:8000/api/events/', newFormData, headers)
+      await axios.post('/api/events/', newFormData, headers)
       history.push('/events')
     } catch (err) {
       console.log('Form Submit Error - >', err.response.data)
@@ -150,7 +150,7 @@ const AddEvent = () => {
     event.preventDefault()
     try {
       await axios.post(
-        'http://localhost:8000/api/categories/',
+        '/api/categories/',
         categoryData,
         headers
       )
@@ -164,7 +164,7 @@ const AddEvent = () => {
   const handleVenueSubmit = async (event) => {
     event.preventDefault()
     try {
-      await axios.post('http://localhost:8000/api/venues/', venueData, headers)
+      await axios.post('/api/venues/', venueData, headers)
       setVenues([...venues, venueData])
     } catch (err) {
       console.log('Venue Submit Error - >', err)

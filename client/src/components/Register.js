@@ -31,7 +31,7 @@ const Register = () => {
     event.preventDefault()
     console.log('Form Data ->', formData)
     try {
-      await axios.post('http://localhost:8000/auth/register/', formData)
+      await axios.post('/auth/register/', formData)
       history.push('/login')
       handleClick()
     } catch (err) {
