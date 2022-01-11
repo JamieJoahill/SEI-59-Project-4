@@ -79,7 +79,7 @@ They are as follows:
 
 ![ven model](https://res.cloudinary.com/dmpvulj3q/image/upload/v1641911143/ReadMe%20images/Project%204%20-%20Rice%20/ven_model_gtvv51.png)
 
-Once I had sorted out my models and the relationships between them. I then worked on Creating the serializers and a populated serializer which would populate all my relevant data on the event. 
+Once I had sorted out my models and the relationships between them. I then worked on creating the serializers and a populated serializer which would populate all my relevant data on the event. 
 
 ![pop serializer](https://res.cloudinary.com/dmpvulj3q/image/upload/v1641911140/ReadMe%20images/Project%204%20-%20Rice%20/pop_serializer_rdkva5.png)
 
@@ -264,7 +264,7 @@ One of the main blockers I faced with this application was understanding query s
 * Leaving a comment on a venue would also be a nice touch. 
 * It isn't on the dice site, but a feature that would allow the user to filter events by a category. 
 * Ability to view another user's profile.
-* A counter so a user can click on ‘attending event’ 
+* A counter so a user can click on ‘attending event’. 
 
 
 ## Future Improvements
